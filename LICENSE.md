@@ -1,3 +1,6 @@
+---
+modified: 2025-05-31T09:08:26Z
+---
 # QNFO Content License Agreement (Version 1.1)
 
 **Effective Date:** January 1, 2025

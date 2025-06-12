@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autaxys MVU-1 Simulation</title>
+    <title>Autaxys MVU-1 Analysis Workbench</title>
     <style>body {
   color: #333;
   background-color: #f4f7f6;
@@ -16,7 +16,7 @@
   padding: 20px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   color: #2c3e50;
 }
 
@@ -84,9 +84,11 @@ label {
   font-weight: bold;
 }
 
-button, input[type="number"] {
+button, input, select {
+  box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 100%;
   padding: 10px;
   font-size: 1rem;
 }
@@ -94,12 +96,12 @@ button, input[type="number"] {
 button {
   color: #fff;
   cursor: pointer;
-  background-color: #3498db;
+  background-color: #27ae60;
   border: none;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #229954;
 }
 
 button:disabled {
@@ -107,16 +109,28 @@ button:disabled {
   background-color: #bdc3c7;
 }
 
-#stop-button {
+#stop-full-analysis-button {
   background-color: #e74c3c;
 }
 
-#stop-button:hover {
+#stop-full-analysis-button:hover {
   background-color: #c0392b;
 }
 
-#live-log-panel {
-  display: none;
+#batch-run-button {
+  background-color: #27ae60;
+}
+
+#batch-run-button:hover {
+  background-color: #229954;
+}
+
+#divergence-run-button {
+  background-color: #f39c12;
+}
+
+#divergence-run-button:hover {
+  background-color: #d35400;
 }
 
 #live-log-output {
@@ -130,96 +144,169 @@ button:disabled {
   overflow-y: scroll;
 }
 
-.log-error {
-  color: #ff7675;
-  font-weight: bold;
+#analysis-report-text {
+  white-space: pre-wrap;
+  background-color: #fdfdfd;
+  border-left: 5px solid #27ae60;
+  padding: 15px;
+  font-family: Courier New, Courier, monospace;
+  line-height: 1.8;
+}
+
+.hidden {
+  display: none;
 }
 </style>
 </head>
 <body>
     <div class="container">
-        <h1>Autaxys MVU-1 Simulation</h1>
-
-        <!-- NEW: On-page documentation section -->
+        <h1>Autaxys MVU-1 Analysis Workbench</h1>
         <details open="">
-            <summary>About This Simulation</summary>
+            <summary>About This Analysis Workbench</summary>
             <div class="docs-content">
-                <h3>What is this?</h3>
-                <p>
-                    This is a "digital universe in a box," a simulation of the Autaxys framework's **Minimal Viable Universe 1 (MVU-1)**. It's designed to test a fundamental idea about how reality might organize itself from a simple starting point, without any external designer or pre-existing laws.
-                </p>
-                <p>
-                    This simulation is a key deliverable for research **Project 6.2: Formal Mathematical &amp; Computational Modeling** of the Autaxic Generative Engine.
-                </p>
-
-                <h3>What is the Goal?</h3>
-                <blockquote>
-                    The core hypothesis being tested is: **Can a system governed by a simple, local optimization principle spontaneously organize itself into complex, stable structures?**
-                </blockquote>
-                <p>
-                    Success is not defined by creating a specific final shape, but by observing whether the system, on its own, trends towards states of higher "coherence" or "stability." We measure this with a score called the Autaxic Lagrangian (`L_A`). If the `L_A` score generally increases over time, the hypothesis is supported.
-                </p>
-
-                <h3>How Does it Work? The Core Principles</h3>
-                <dl>
-                    <dt>Distinctions &amp; Relations</dt>
-                    <dd>The universe consists of fundamental "things" called Distinctions (nodes) and the "connections" between them called Relations (edges). This forms a graph.</dd>
-
-                    <dt>Polarity</dt>
-                    <dd>Each Distinction has a `polarity` of either `+1` or `-1`. Think of them like simple opposite charges.</dd>
-
-                    <dt>The "Cosmic Algorithm" (The Rules)</dt>
-                    <dd>The universe evolves according to three simple rewrite rules:
+                <h3>The Self-Generating Universe: Parameter-Free Simulation</h3>
+                <p>This workbench is designed to embody the core Autaxys principle of **self-generation**. This means the simulation starts from the only logically "empty" state (no initial distinctions) and evolves based purely on its intrinsic rules, **without any user-configurable parameters like initial distinctions, max steps, or user-defined seeds.**</p>
+                <p>The universe determines its own evolution. The "initial distinctions" for the primordial soup and the "max steps" are now **intrinsic constants** within the model itself, not external inputs.</p>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0">
+                <h3>The Core Hypothesis</h3>
+                <blockquote>The central hypothesis being tested is: **Can a system governed by a simple, local optimization principle spontaneously organize itself into complex, stable structures, starting from nothing?**</blockquote>
+                <p>A statistically significant upward trend in the average `L_A` score (Autaxic Lagrangian, a measure of coherence) across many runs provides strong evidence in support of this hypothesis.</p>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0">
+                <h3>The Automated Analysis Workflow</h3>
+                <p>Upon clicking "Start Full Analysis," the workbench automatically performs the following sequence:</p>
+                <ol>
+                    <li><b>Phase 1: Purely Deterministic Run (Intrinsic Evolution)</b>
                         <ul>
-                            <li><b>Bonding:</b> A `+1` and a `-1` Distinction that are not yet connected can form a new Relation between them.</li>
-                            <li><b>Annihilation:</b> A perfectly bonded pair (`+1` and `-1` connected only to each other) can remove itself from the universe.</li>
-                            <li><b>Redundancy Collapse:</b> An unstable triangle of three connected nodes simplifies itself into a single, stable bonded pair.</li>
+                            <li>The simulation starts from an empty graph with intrinsic initial distinctions.</li>
+                            <li>It evolves using a deterministic tie-breaking rule and high numerical precision.</li>
+                            <li>The universe runs until it reaches a natural halt (Fixed Point, Limit Cycle, or Annihilation) or a high intrinsic step limit.</li>
+                            <li>This models the intrinsic, parameter-free evolution of a single universe.</li>
                         </ul>
+                    </li>
+                    <li><b>Phase 2: Precision Divergence Analysis</b>
+                        <ul>
+                            <li>The workbench re-runs the deterministic simulation in lock-step against a slightly perturbed version (using native floating-point precision).</li>
+                            <li>It reports the exact step where a microscopic numerical difference causes their evolutionary paths to diverge, quantifying the "butterfly effect."</li>
+                        </ul>
+                    </li>
+                    <li><b>Phase 3: Scientific Batch Analysis (Monte Carlo Exploration)</b>
+                        <ul>
+                            <li>The workbench automatically performs 30 unique, stochastic simulations.</li>
+                            <li>This phase analyzes the *average* behavior of the self-generating system, providing statistical data.</li>
+                        </ul>
+                    </li>
+                    <li><b>Phase 4: Comprehensive Report Generation</b>
+                        <ul>
+                            <li>All findings from the three phases are aggregated and presented in a single, detailed report directly on the page, including plots and interpretations.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0">
+                <h3>The Cosmic Algorithm: Rules &amp; Autaxic Rationale (MVU-1)</h3>
+                <p>The **"Cosmic Algorithm"** in MVU-1 consists of three simple rules, each embodying a fundamental aspect of the Autaxys framework's self-organization principles:</p>
+                <dl>
+                    <dt>Genesis Rule (Intrinsic Creation)</dt>
+                    <dd>
+                        <b>Action:</b> A new Distinction (+1 or -1 polarity) is spontaneously created. Each new Distinction is born with an intrinsic `ProtoValence` (bonding desire).
+                        <b>Autaxic Rationale:</b> This rule represents the universe's intrinsic drive to exist and generate new patterns from an undifferentiated "Vacuum State" (S0). In MVU-1, it acts as a fallback: if no other structural rule can improve or maintain the universe's "coherence" (L_A), new potential is generated to prevent stagnation. This aligns with the "Intrinsic Drive" concept in `AUTX-A0-Conceptual-AGE-Expansion-Speculations-V1.md` (Sec 4.1).
                     </dd>
-
-                    <dt>The Autaxic Lagrangian (L_A) - The "Fitness" Score</dt>
-                    <dd>The `L_A` is a score that measures how "good" the current state of the universe is. It's calculated as `(Number of bonded pairs) / (Total number of Distinctions + Relations)`. At every step, the simulation looks at all possible moves (Bonding, Annihilation, etc.) and chooses the one that will result in the **highest `L_A` score** for the next step. This is the sole driver of the system's evolution.</dd>
+                    <dt>Bonding Rule (Attraction &amp; Formation)</dt>
+                    <dd>
+                        <b>Action:</b> A Relation is created between a disconnected `+1` and `-1` Distinction if both have available `ProtoValence` (bonding sites). `ProtoValence` represents a fixed *initial capacity*; bonding consumes available sites relative to `degree`.
+                        <b>Autaxic Rationale:</b> This rule models fundamental attraction. It directly increases the "Number of bonded +1/-1 pairs," which is the numerator of `L_A`. Therefore, Bonding is highly favored by the optimization principle and drives the initial formation of structure, seeking to increase `L_A`. It represents the universe's tendency to form coherent relationships.
+                    </dd>
+                    <dt>Annihilation Rule (Resolution &amp; Simplification)</dt>
+                    <dd>
+                        <b>Action:</b> A bonded `+1/-1` pair (two Distinctions connected only to each other) is removed from the graph.
+                        <b>Autaxic Rationale:</b> This rule models the resolution of stable, coherent entities. While it removes bonded pairs (decreasing the `L_A` numerator), it also removes nodes and relations (decreasing the `L_A` denominator). If this simplification results in a higher `L_A` (e.g., by shedding "inefficient" structures), it will be chosen. It represents the universe's drive towards parsimony and eliminating redundant or completed structures, promoting dynamic turnover. It links to "Conservation of Distinguishability" and "Parsimony" meta-principles.
+                    </dd>
+                    <dt>Redundancy Collapse Rule (Emergent Hierarchy / Optimization of Complexity)</dt>
+                    <dd>
+                        <b>Action:</b> A fully connected triangle of three Distinctions (K3 subgraph) is simplified into a single bonded pair (K2 subgraph). The two nodes with the lowest degree *within the overall graph* are preserved.
+                        <b>Autaxic Rationale:</b> This rule embodies a form of "efficiency optimization." A K3 is a dense, potentially redundant structure. Collapsing it to a K2 reduces complexity (`|D|+|R|`) while potentially preserving the `L_A` numerator (one bonded pair). This rule is crucial for creating more optimal, less "busy" structures and hints at early forms of emergent hierarchy or simplification of complex subgraphs. It reflects the universe's drive towards "Interactive Complexity Maximization" by finding efficient structural arrangements. This concept aligns with "MergeRule" speculation in `AUTX-A0-Conceptual-AGE-Expansion-Speculations-V1.md` (Sec 3.1).
+                    </dd>
                 </dl>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0">
+                <h3 style="color: #c0392b">A Note on Precision, Chaos, and Reproducibility</h3>
+                <p>This simulation touches on concepts at the heart of chaos theory: extreme sensitivity to initial conditions. In a computational model, there are two primary sources of deviation that can make a run non-reproducible. This workbench is designed to control both.</p>
+                <h4>Source 1: Algorithmic Randomness (The "Monte Carlo" method)</h4>
+                <blockquote>**The Tie-Breaking Rule:** If two or more different possible moves would result in the *exact same* maximum `L_A` score, the simulation chooses one of the equally good moves at random.</blockquote>
+                <p>This is the model's **intended** source of non-determinism. We control it with the `Seed` input. Providing a seed makes the "random" choices completely predictable.</p>
+                <h4>Source 2: Numerical Imprecision (The "Butterfly Effect")</h4>
+                <blockquote>**Floating-Point Error:** Standard computer numbers (like JavaScript's `Number`) cannot perfectly represent all decimal fractions. Tiny, invisible rounding errors can occur during the `L_A` calculation.</blockquote>
+                <p>This is a **computational artifact**. A microscopic rounding error could incorrectly break a legitimate tie and send the simulation down a completely different evolutionary path. To ensure scientific integrity, we must control it.</p>
+                <h4>The Solution: User-Selectable Precision &amp; Intrinsic Seeding</h4>
+                <p>This workbench provides two key tools for rigorous analysis:</p>
+                <dl>
+                    <dt>Calculation Precision</dt>
+                    <dd><b>High (Reproducible):</b> Uses a specialized library for arbitrary-precision decimal math. This is slower but guarantees calculations are exact and free from floating-point errors. **All formal analysis should be done in this mode.**<br><b>Native (Fast):</b> Uses standard, fast hardware-level floats. This mode is useful for demonstrating how tiny rounding errors can lead to different outcomes.</dd>
+                    <dt>Intrinsic Seeding</dt>
+                    <dd>A fixed seed like `42` feels like an external constant. **Intrinsic Seeding** removes this by generating a seed from the simulation's own parameters. This means the entire evolutionary path is a direct, deterministic consequence of its own "physical constants," with no external "magic number."</dd>
+                </dl>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0">
+                <h3>Ontological Closure (OC) &amp; Relational Tension</h3>
+                <p>The concepts of Ontological Closure (OC) and Relational Tension are central to Autaxys. The simulation aims to show how universes driven by `L_A` maximization tend towards states of OC (stability) and reduced tension.</p>
+                <dl>
+                    <dt>Relational Tension</dt>
+                    <dd>A measure of unresolved logical inconsistency or disorder in the relational network. It quantifies how "uncomfortable" the universe is with its current state. The model calculates tension from unsatisfied `ProtoValence` (initial capacity minus active connections) and "frustrated" `Polarity` on nodes with available `ProtoValence`. A core prediction is that the universe evolves to minimize this tension.</dd>
+                    <dt>Fixed Point OC</dt>
+                    <dd>A state where no structural rules (Bonding, Annihilation, Collapse) can be applied. The universe has achieved a completely static, stable configuration. If the universe reaches this, it is considered fully "closed" and self-consistent.</dd>
+                    <dt>Tension Minimization OC</dt>
+                    <dd>A state where no single application of a structural rule would reduce the overall Relational Tension. The universe is at a local optimum, a "valley" in the tension landscape. While it might still be active (e.g., Genesis continues), it has achieved a form of local stability.</dd>
+                </dl>
+                <p>These OC states are natural halting conditions for the simulation, unless it hits its intrinsic maximum steps.</p>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0">
+                <h3>Future Directions &amp; Complex Phenomena (Beyond MVU-1)</h3>
+                <p>MVU-1 is a "toy model" designed to prove the core concept of self-organization. The Autaxys framework is much richer and can be expanded to model higher-level emergent phenomena. Future research phases will explore concepts detailed in `AUTX-A0-Conceptual-AGE-Expansion-Speculations-V1.md`, such as:</p>
+                <ul>
+                    <li><b>Expanded Proto-property Space:</b> Distinctions and Relations could have attributes like `TemporalInertia`, `InformationContent`, `ProcessingCapacity`, or `TemporalDecay`, leading to more nuanced interactions.</li>
+                    <li><b>Dynamic Proto-property Interactions:</b> Properties could change over time based on history, local context, or interactions, introducing adaptation and memory.</li>
+                    <li><b>Expanded Cosmic Algorithm Rules:</b> New rule types could introduce:
+                        <ul>
+                            <li>`MergeRule`: Combining coherent subgraphs into a new, higher-order Distinction (forming hierarchies).</li>
+                            <li>`SplitRule`: A Distinction splitting due to internal inconsistency.</li>
+                            <li>`PropertyMutationRule`: Rules that change existing attributes based on "stress" or experience.</li>
+                            <li>`Reinforcement/Inhibition Rules`: Strengthening or weakening relations based on stability contributions (primitive learning).</li>
+                        </ul>
+                    </li>
+                    <li><b>Differentiated Tension Sources:</b> Instead of one `L_A` score, tension could be broken down into `ValenceTension`, `InformationTension`, etc., creating multi-dimensional "Tension Landscapes."</li>
+                    <li><b>Limit Cycles &amp; Attractors:</b> With more complex rules, the universe might not settle into a static point but cycle through stable patterns or be drawn into regions of dynamic equilibrium (attractors).</li>
+                </ul>
+                <p>These expansions are key to modeling emergent complexity, adaptive behavior, hierarchical organization, and potentially even proto-consciousness within the Autaxys framework.</p>
             </div>
         </details>
 
-        <div class="panel controls">
-            <h3>Simulation Controls</h3>
-            <div class="controls-grid">
-                <div class="input-group">
-                    <label for="distinctions-input">Initial Distinctions (each polarity)</label>
-                    <input type="number" id="distinctions-input" value="2" min="1">
-                </div>
-                <div class="input-group">
-                    <label for="steps-input">Max Steps</label>
-                    <input type="number" id="steps-input" value="20" min="1">
-                </div>
-                <button id="run-button">Start Simulation</button>
-                <button id="stop-button" disabled="">Stop Simulation</button>
+        <div class="panel">
+            <button id="start-full-analysis-button">Start Full Analysis</button>
+            <button id="stop-full-analysis-button" disabled="" style="background-color: #e74c3c">Stop Analysis</button>
+            <div id="full-analysis-status" style="color: #7f8c5c; margin-top: 15px; font-style: italic"></div>
+        </div>
+
+        <div id="results-container" class="hidden">
+            <div class="panel" id="deterministic-run-panel">
+                <h3>Phase 1: Deterministic Run Log</h3>
+                <p>This section logs the intrinsic, parameter-free evolution of a single universe with deterministic tie-breaking and high precision.</p>
+                <div id="deterministic-log-output" style="color: #ecf0f1; white-space: pre-wrap; background-color: #2c3e50; border-radius: 5px; height: 300px; padding: 15px; font-family: Courier New, Courier, monospace; overflow-y: scroll"></div>
             </div>
-            <div id="status-line" style="color: #7f8c8d; margin-top: 15px; font-style: italic"></div>
-        </div>
 
-        <div class="panel" id="live-log-panel">
-            <h3>Live Simulation Log</h3>
-            <div id="live-log-output"></div>
-        </div>
-        
-        <div class="panel summary" id="summary-panel" style="display: none">
-            <h3>Final State Summary</h3>
-            <pre id="summary-text"></pre>
-        </div>
+            <div class="panel" id="divergence-analysis-panel">
+                <h3>Phase 2: Precision Divergence Analysis</h3>
+                <p>This test re-runs the deterministic simulation against a native-precision version. It reports the exact step where a numerical difference causes their paths to diverge.</p>
+                <div id="divergence-analysis-output" style="background-color: #fdfdfd; border-left: 5px solid #f39c12; padding: 15px; font-family: Courier New, Courier, monospace; line-height: 1.6"></div>
+            </div>
 
-        <div id="results-section" style="display: none">
-            <!-- Chart canvases will be added here by main.ts -->
-        </div>
+            <div class="panel" id="batch-analysis-panel">
+                <h3>Phase 3: Scientific Batch Analysis Report</h3>
+                <p>This section presents the aggregated results from 30 unique, stochastic simulations, along with a statistical plot and interpretation.</p>
+                <div id="batch-analysis-text" style="white-space: pre-wrap; background-color: #fdfdfd; border-left: 5px solid #27ae60; padding: 15px; font-family: Courier New, Courier, monospace; line-height: 1.8"></div>
+                <canvas id="batch-plot-canvas" style="margin-top: 20px"></canvas>
+            </div>
 
-        <div class="panel" id="download-panel" style="display: none">
-            <button id="download-csv">Download Results (.csv)</button>
+            <div class="panel" id="download-all-data-panel">
+                <button id="download-all-data-button">Download All Raw Simulation Data (.csv)</button>
+            </div>
         </div>
-
     </div>
     <script type="module" src="/mvu1-sim.8ed14f75.js"></script>
-
 
 </body></html>

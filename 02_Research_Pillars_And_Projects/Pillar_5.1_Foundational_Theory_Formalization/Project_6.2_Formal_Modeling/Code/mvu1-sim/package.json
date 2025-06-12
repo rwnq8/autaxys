@@ -1,7 +1,7 @@
 {
-  "name": "autaxys-mvu1-ts",
-  "version": "1.0.0",
-  "description": "TypeScript simulation of the Autaxys MVU-1 Engine.",
+  "name": "autaxys-mvu1-ts-workbench",
+  "version": "6.0.0",
+  "description": "Parameter-free, self-generating, all-in-one simulation and analysis workbench for the Autaxys MVU-1 Engine.",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
@@ -10,13 +10,13 @@
   "license": "MIT",
   "dependencies": {
     "chart.js": "^4.4.0",
+    "decimal.js": "^10.4.3",
     "graphology": "^0.25.4",
-    "graphology-layout-forceatlas2": "^0.10.1",
-    "papaparse": "^5.4.1",
-    "sigma": "^3.0.0-beta.13",
-    "graphology-utils": "^2.5.1"
+    "papaparse": "^5.4.1"
   },
   "devDependencies": {
+    "@types/decimal.js": "^7.4.0",
+    "@types/node": "^20.11.24",
     "@types/papaparse": "^5.3.9",
     "parcel": "^2.10.0",
     "typescript": "^5.2.2"

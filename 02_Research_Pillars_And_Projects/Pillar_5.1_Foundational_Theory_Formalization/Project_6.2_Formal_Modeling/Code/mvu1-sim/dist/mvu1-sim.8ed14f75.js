@@ -1094,22 +1094,22 @@ class MVU1_Simulator {
         // --- Intrinsic Parameters for a Self-Generating Universe (No Longer in SimConfig) ---
         // These are fixed within the model, not external inputs, embodying self-generation.
         // The universe always starts truly empty, and Genesis populates it.
-        this.INITIAL_PRIMORDIAL_DISTINCTIONS = 10 // Number of +/- distinctions to create initially (first genesis steps)
+        this.INITIAL_PRIMORDIAL_DISTINCTIONS = 100 // Number of +/- distinctions to create initially (first genesis steps)
         ;
-        this.MAX_PROTO_VALENCE = 2 // Max random valence for new distinctions (0 to MAX_PROTO_VALENCE)
+        this.MAX_PROTO_VALENCE = 10 // Max random valence for new distinctions (0 to MAX_PROTO_VALENCE)
         ;
         this.TENSION_WV = new (0, _precision.PrecisionNumber)(1.0, 'high') // Weight for unsatisfied valence tension
         ;
         this.TENSION_WP = new (0, _precision.PrecisionNumber)(5.0, 'high') // Weight for frustrated polarity tension
         ;
         // --- Parameters for Dynamic Halting ---
-        this.MAX_INTRINSIC_STEPS = 5000 // Hard limit on steps to halt truly pathological cases (very rarely hit)
+        this.MAX_INTRINSIC_STEPS = 50000 // Hard limit on steps to halt truly pathological cases (very rarely hit)
         ;
-        this.UNBOUNDED_NODE_LIMIT = 1000 // Heuristic limit for nodes to detect unbounded growth
+        this.UNBOUNDED_NODE_LIMIT = 10000 // Heuristic limit for nodes to detect unbounded growth
         ;
-        this.UNBOUNDED_RELATION_LIMIT = 5000 // Heuristic limit for relations
+        this.UNBOUNDED_RELATION_LIMIT = 50000 // Heuristic limit for relations
         ;
-        this.LIMIT_CYCLE_HISTORY_WINDOW = 100 // Max steps to look back for cycle detection
+        this.LIMIT_CYCLE_HISTORY_WINDOW = 1000 // Max steps to look back for cycle detection
         ;
         this.graph_state_history = new Map() // Map: graph_hash -> step_number for cycle detection
         ;

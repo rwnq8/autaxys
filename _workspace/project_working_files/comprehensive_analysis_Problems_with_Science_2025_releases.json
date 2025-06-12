@@ -1,0 +1,1666 @@
+{
+  "batchBibliographicInfo": {
+    "preparedDate": "2025-06-04T12:57:48.230Z",
+    "cohesionProfile": {
+      "aiSuggestedLevel": "related_collection",
+      "userConfirmedLevel": "related_collection"
+    },
+    "projectReferenceId": "Problems with Science (2025 releases)"
+  },
+  "individualFileAnalyses": [
+    {
+      "fileName": "Before the Big Bang.md",
+      "entities": [
+        "Big Bang",
+        "Photons",
+        "Black Holes",
+        "Information Dynamics",
+        "Universal Information (I)",
+        "Human constructs/models (Î)",
+        "Contrast (κ)",
+        "Resolution (ε)",
+        "Hawking radiation",
+        "Informational Universe Hypothesis"
+      ],
+      "keyPhrases": [
+        "Information Dynamics",
+        "Resolution mismatch",
+        "Universal Information (I)",
+        "Human constructs (Î)",
+        "Informational contrasts (κ)",
+        "Resolution (ε)",
+        "κ gradients"
+      ],
+      "themes": [
+        "Redefining cosmic phenomena (Big Bang, photons, black holes) through an informational lens",
+        "The universe's structure as Universal Information (I) and human perception as models (Î)",
+        "Resolution (ε) and contrast (κ) as fundamental concepts explaining perceived reality",
+        "Singularities and mysteries as artifacts of limited human models, not inherent reality"
+      ],
+      "summary": "This text, titled *Before The Big Bang: What Photons and Black Holes Have in Common*, argues that the Big Bang, photons, and black holes are not fundamental physical entities or events but manifestations of \"resolution mismatch\" between Universal Information (I) and human models (Î). It proposes that these phenomena expose the limits of our frameworks (Î) to resolve informational contrasts (κ) at sufficient granularity (ε). The Big Bang is framed as a resolution threshold, not an origin; photons as κ transitions approximated by Î; and black holes as ε bottlenecks. The core argument, rooted in Information Dynamics, is that reality is an eternal substrate of oppositions (I), and perceived mysteries arise from the limitations of our models (Î) to capture its structure at varying resolutions (ε).",
+      "topTerms": [
+        {
+          "term": "resolution",
+          "frequency": 15
+        },
+        {
+          "term": "information",
+          "frequency": 11
+        },
+        {
+          "term": "model",
+          "frequency": 8
+        },
+        {
+          "term": "big bang",
+          "frequency": 7
+        },
+        {
+          "term": "black hole",
+          "frequency": 5
+        },
+        {
+          "term": "photon",
+          "frequency": 5
+        },
+        {
+          "term": "contrast",
+          "frequency": 5
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely reframes the Big Bang, photons, and black holes not as distinct physical phenomena but as shared manifestations of \"resolution mismatch\" between Universal Information (I) and human models (Î).",
+        "It posits that singularities and cosmic mysteries are artifacts of the limitations of human perception and models (Î) to resolve informational contrasts (κ) at sufficient granularity (ε), rather than inherent features of reality (I)."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Before The Big Bang:...\") The Big Bang is not an ontological origin point but a *threshold of human perception*—a moment where our models (Î) fail to resolve the informational contrasts (κ) underlying reality.",
+        "(Quni, 2025, \"Before The Big Bang:...\") The Big Bang, photons, and black holes are all manifestations of the same phenomenon: **resolution mismatch**.",
+        "(Quni, 2025, \"Before The Big Bang:...\") Pre-Big Bang, no distinctions like time (τ) or spacetime existed because κ gradients were unresolved (ε undefined).",
+        "(Quni, 2025, \"Before The Big Bang:...\") These phenomena share a lesson: *reality does not change; our models do*."
+      ],
+      "bibliographicInfo": {
+        "title": "Before The Big Bang: What Photons and Black Holes Have in Common",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Beyond the Tyranny of Math.md",
+      "entities": [
+        "Information Ontology",
+        "Mathematical Formalism",
+        "Rowan Brad Quni",
+        "QNFO",
+        "Gödel's Incompleteness Theorems",
+        "Lagrangian Formalism",
+        "Langlands program",
+        "Logic",
+        "Information Dynamics",
+        "Quantum Indeterminacy"
+      ],
+      "keyPhrases": [
+        "Mathematical Formalism",
+        "Information Ontology",
+        "Gödel's Incompleteness",
+        "Lagrangian Obsession",
+        "Logical Coherence",
+        "Resolution Parameter",
+        "Tyranny of Math"
+      ],
+      "themes": [
+        "Critique of excessive reliance on mathematical formalism in physics",
+        "Advocacy for Information Ontology as a fundamental framework",
+        "Emphasis on logic over complex equations for understanding reality",
+        "Acceptance of incompleteness and limits of formal systems",
+        "Prioritizing prediction and coherence over analytical derivation"
+      ],
+      "summary": "This text, *Beyond the Tyranny of Mathematical Formalism*, by Rowan Brad Quni, argues for a shift from *Information Dynamics* to *Information Ontology* (IO), viewing information as the fundamental substance of reality. It critiques conventional physics' over-reliance on mathematical formalism (like Lagrangians), arguing this persists despite Gödel's demonstration of formal systems' limits. Examples like the Langlands program are cited as evidence of excessive complexity. The author proposes logic as a more fundamental path to understanding reality, subordinating mathematics as an emergent tool. IO embraces incompleteness and prioritizes logical coherence and prediction over complex formal derivations.",
+      "topTerms": [
+        {
+          "term": "information",
+          "frequency": 7
+        },
+        {
+          "term": "ontology",
+          "frequency": 5
+        },
+        {
+          "term": "mathematical",
+          "frequency": 5
+        },
+        {
+          "term": "formalism",
+          "frequency": 5
+        },
+        {
+          "term": "logic",
+          "frequency": 5
+        },
+        {
+          "term": "reality",
+          "frequency": 4
+        },
+        {
+          "term": "system",
+          "frequency": 3
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely positions Information Ontology (IO) as a framework that subordinates mathematics to logic, arguing that the limits of formal systems demonstrated by Gödel necessitate this approach.",
+        "It specifically critiques the 'tyranny' and 'misguided worship' of mathematical formalism in physics, using examples like the Langlands program and the obsession with Lagrangians to illustrate its points."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Beyond the Tyranny of...\") The term “ontology” roots the framework in the study of *what exists* and *how it exists*, emphasizing the primacy of information as the fundamental substance of reality.",
+        "(Quni, 2025, \"Beyond the Tyranny of...\") Conventional physics operates under an unspoken dogma: that the ultimate theory of reality must be expressible as a unified mathematical formalism—preferably a Lagrangian or Hamiltonian so pristine that it fits on a t-shirt.",
+        "(Quni, 2025, \"Beyond the Tyranny of...\") If Gödel tells us that even arithmetic contains truths unprovable within its own system, why should we expect a single equation to capture the entirety of a universe capable of generating mathematicians who ponder such equations?",
+        "(Quni, 2025, \"Beyond the Tyranny of...\") IO does not reject mathematics, but it subordinates it to a broader logical framework."
+      ],
+      "bibliographicInfo": {
+        "title": "Beyond the Tyranny of Mathematical Formalism",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org",
+        "sourceName": "QNFO"
+      }
+    },
+    {
+      "fileName": "Breaking the UV Barrier.md",
+      "entities": [
+        "Moore's Law",
+        "Rayleigh criterion",
+        "Holography",
+        "Scanning Electron Microscopy (SEM)",
+        "Electron Beam Lithography (EBL)",
+        "Extreme Ultraviolet (EUV) lithography",
+        "Deep Ultraviolet (DUV) lithography",
+        "Immersion lithography"
+      ],
+      "keyPhrases": [
+        "semiconductor lithography",
+        "higher resolution",
+        "UV barrier",
+        "holographic lithography",
+        "electron beam lithography",
+        "nanoscale resolution",
+        "critical dimension"
+      ],
+      "themes": [
+        "Limitations of UV lithography for miniaturization",
+        "Challenges and potential of EUV lithography",
+        "Exploring alternative high-resolution techniques (Holography, SEM)",
+        "Principles and applications of Holography in patterning",
+        "Principles and applications of SEM/EBL in manufacturing and patterning"
+      ],
+      "summary": "This document, *Breaking the UV Barrier*, analyzes the limitations of current UV lithography techniques in semiconductor manufacturing, driven by the need for smaller feature sizes to sustain Moore's Law. It discusses the physical limits imposed by wavelength, the complexity of resolution enhancement techniques, and the significant challenges faced by Extreme Ultraviolet (EUV) lithography. The text then explores the fundamental principles and potential applications of two alternative technologies, Holography and Scanning Electron Microscopy (SEM), as pathways to achieve higher resolution patterning by utilizing shorter effective wavelengths, potentially overcoming the UV barrier.",
+      "topTerms": [
+        {
+          "term": "lithography",
+          "frequency": 25
+        },
+        {
+          "term": "semiconductor",
+          "frequency": 19
+        },
+        {
+          "term": "holography",
+          "frequency": 18
+        },
+        {
+          "term": "resolution",
+          "frequency": 17
+        },
+        {
+          "term": "electron",
+          "frequency": 16
+        },
+        {
+          "term": "pattern",
+          "frequency": 12
+        },
+        {
+          "term": "wavelength",
+          "frequency": 11
+        }
+      ],
+      "uniqueContributions": [
+        "This text specifically frames Holography and Scanning Electron Microscopy (SEM) as potential alternative pathways to 'break the UV barrier' in semiconductor lithography, presenting them as distinct approaches to overcome the wavelength limitations of traditional UV methods.",
+        "It provides a structured overview of the fundamental principles and relevant applications of both Holography and SEM/EBL, highlighting their respective strengths (resolution, maskless writing for EBL) and limitations (throughput for EBL) in the context of high-resolution patterning for semiconductor manufacturing."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Breaking the UV Barrier\") Despite these remarkable advancements, UV lithography is now approaching its fundamental physical limitations, primarily due to the inherent wavelength of the light source.",
+        "(Quni, 2025, \"Breaking the UV Barrier\") Given the increasing limitations and costs associated with pushing UV lithography further, and the substantial challenges faced by EUV technology, this report will explore the fundamental principles and potential applications of two alternative technologies: holography and scanning electron microscopy (SEM).",
+        "(Quni, 2025, \"Breaking the UV Barrier\") The fundamental principle of holography, its capacity to capture and reconstruct the complete wavefront of light including phase information, distinguishes it from conventional imaging techniques that only record intensity.",
+        "(Quni, 2025, \"Breaking the UV Barrier\") The primary advantage of electron beam lithography is its exceptional resolution."
+      ],
+      "bibliographicInfo": {
+        "title": "Breaking the UV Barrier",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Comparing Fundamental Frameworks.md",
+      "entities": [
+        "IO (Goals/Criteria)",
+        "String Theory",
+        "Loop Quantum Gravity (LQG)",
+        "E8 Unification (Lisi-type)",
+        "Digital Physics (Wolfram/Zuse)",
+        "Causal Set Theory",
+        "Twistor Theory",
+        "Geometric Algebra Models",
+        "SM + GR (ΛCDM)",
+        "Rowan Brad Quni"
+      ],
+      "keyPhrases": [
+        "Fundamental Frameworks",
+        "Information Ontologically Primary",
+        "Fundamental Continuum Substrate",
+        "Quantization Emergent",
+        "Gravity Emergent",
+        "Background Independent",
+        "Measurement Problem"
+      ],
+      "themes": [
+        "Comparison of fundamental physics theories based on core commitments",
+        "The role of information and discreteness vs. continuum in fundamental reality",
+        "Emergence of key physical phenomena (quantization, gravity, constants) from underlying principles",
+        "Addressing major unsolved problems (dark matter/energy, measurement problem) within different frameworks"
+      ],
+      "summary": "This document, *Comparing Fundamental Frameworks*, presents a Binary Decision Tapestry (BDT) table comparing various fundamental physics frameworks, including SM + GR (ΛCDM), String Theory, Loop Quantum Gravity, Digital Physics, and IO (Goals/Criteria). The comparison is based on core commitments such as whether information is ontologically primary, the nature of the fundamental substrate (continuum vs. discrete), whether quantization and gravity are emergent, and if the framework is background independent. Footnotes provide detailed explanations for each entry. The table highlights differences in how these theories address fundamental constants, particle hierarchies, dark matter/energy, and the measurement problem, positioning IO as a framework with distinct goals and criteria.",
+      "topTerms": [
+        {
+          "term": "framework",
+          "frequency": 10
+        },
+        {
+          "term": "emergent",
+          "frequency": 9
+        },
+        {
+          "term": "fundamental",
+          "frequency": 8
+        },
+        {
+          "term": "geometry",
+          "frequency": 7
+        },
+        {
+          "term": "quantization",
+          "frequency": 6
+        },
+        {
+          "term": "discrete",
+          "frequency": 5
+        },
+        {
+          "term": "information",
+          "frequency": 4
+        }
+      ],
+      "uniqueContributions": [
+        "This document provides a structured, comparative table (BDT) evaluating diverse fundamental physics frameworks against a specific set of core commitments and features.",
+        "It explicitly positions the 'IO (Goals/Criteria)' framework and its specific aims (like deriving constants from π, φ, explaining dark matter/energy, and addressing the measurement problem) in contrast to established and other speculative theories."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Comparing Fundamental Frameworks\") Binary Decision Tapestry (BDT) Comparing Fundamental Frameworks (v3)",
+        "(Quni, 2025, \"Comparing Fundamental Frameworks\") Information Ontologically Primary?",
+        "(Quni, 2025, \"Comparing Fundamental Frameworks\") Addresses Measurement Problem?",
+        "(Quni, 2025, \"Comparing Fundamental Frameworks\") Fundamentally Background Independent?"
+      ],
+      "bibliographicInfo": {
+        "title": "Comparing Fundamental Frameworks",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025"
+      }
+    },
+    {
+      "fileName": "Cosmological Constant Crisis.md",
+      "entities": [
+        "Albert Einstein",
+        "Cosmological Constant",
+        "Edwin Hubble",
+        "Lambda Cold Dark Matter model",
+        "Dark Energy",
+        "Dark Matter",
+        "Alexander Friedman",
+        "Big Bang theory",
+        "George Ellis",
+        "Mordehai Milgrom"
+      ],
+      "keyPhrases": [
+        "cosmological constant crisis",
+        "accelerated expansion of the universe",
+        "Lambda Cold Dark Matter model",
+        "scientific populism",
+        "dark energy and dark matter",
+        "Big Bang theory flaws",
+        "sensitivity analysis"
+      ],
+      "themes": [
+        "Critique of the uncritical acceptance of the cosmological constant and the Lambda CDM model.",
+        "Analysis of historical flaws in scientific practice, particularly regarding theoretical assumptions.",
+        "Discussion of the impact of institutional factors and education on scientific integrity.",
+        "Advocacy for increased critical thinking, sensitivity analysis, and consideration of alternative theories."
+      ],
+      "summary": "This text, titled \"The Cosmological Constant Crisis and Its Impact on Modern Science\" by Rowan Brad Quni (Quni, 2025), critiques the history and adoption of the cosmological constant ($\\Lambda$) in modern cosmology. It argues that $\\Lambda$, initially introduced by Albert Einstein and later resurrected to explain cosmic acceleration (dark energy), represents a form of \"scientific populism\" and reflects broader flaws in scientific practice, such as uncritical acceptance of assumptions and ad hoc adjustments. The author links $\\Lambda$'s role to issues within the $\\Lambda$CDM model and the Big Bang theory, highlighting problems like the singularity, horizon, and flatness issues. The text calls for a fundamental rethinking of science, emphasizing critical thinking, sensitivity analysis, and challenging institutional groupthink, drawing parallels to *The Structure of Scientific Revolutions* by Thomas Kuhn.",
+      "topTerms": [
+        {
+          "term": "constant",
+          "frequency": 13
+        },
+        {
+          "term": "science",
+          "frequency": 10
+        },
+        {
+          "term": "model",
+          "frequency": 9
+        },
+        {
+          "term": "universe",
+          "frequency": 8
+        },
+        {
+          "term": "theory",
+          "frequency": 8
+        },
+        {
+          "term": "thinking",
+          "frequency": 7
+        },
+        {
+          "term": "dark",
+          "frequency": 7
+        }
+      ],
+      "uniqueContributions": [
+        "This text uniquely frames the adoption of the cosmological constant and the Lambda CDM model as 'scientific populism' and 'shared dishonesty'.",
+        "It specifically calls for 'sensitivity audits' of cosmological models and critiques STEM education's focus on 'plug and chug' methods as contributing to the crisis.",
+        "The author explicitly links the cosmological constant to broader issues of scientific integrity and the suppression of dissenting voices like those advocating for MOND."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"The Cosmological Constant Crisis...\") However, the adoption of $\\Lambda$CDM cannot be attributed to empirical success or rigorous validation.",
+        "(Quni, 2025, \"The Cosmological Constant Crisis...\") Instead, it reflects a form of **scientific populism**, where convenience and alignment with preconceived notions outweigh critical scrutiny.",
+        "(Quni, 2025, \"The Cosmological Constant Crisis...\") These flaws highlight how $\\Lambda$ acts as a **hook** for broader scientific dishonesty: convenient adjustments to preserve prestige, not truth.",
+        "(Quni, 2025, \"The Cosmological Constant Crisis...\") The $\\Lambda$ crisis exposes a fundamental flaw in modern cosmology: the uncritical acceptance of flawed assumptions and the suppression of dissenting voices."
+      ],
+      "bibliographicInfo": {
+        "title": "The Cosmological Constant Crisis and Its Impact on Modern Science",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025"
+      }
+    },
+    {
+      "fileName": "Einstein was Wrong.md",
+      "entities": [
+        "Albert Einstein",
+        "Rowan Brad Quni",
+        "QNFO",
+        "Dark Matter",
+        "Dark Energy",
+        "Modified Newtonian Dynamics (MOND)",
+        "Multiverse hypothesis",
+        "String theory",
+        "Mordehai Milgrom",
+        "Cosmological constant"
+      ],
+      "keyPhrases": [
+        "Einstein Was Wrong",
+        "Biggest Blunder",
+        "Cosmological constant",
+        "General relativity",
+        "Dark matter",
+        "Dark energy",
+        "Modified Newtonian Dynamics (MOND)"
+      ],
+      "themes": [
+        "Critique of modern cosmology",
+        "Challenges to dark matter and dark energy theories",
+        "Critique of multiverse and string theory",
+        "Call for critical thinking in science",
+        "Historical context of Einstein's errors"
+      ],
+      "summary": "This text, titled \"Einstein Was Wrong\" by Rowan Brad Quni of QNFO, critiques modern cosmology, arguing it relies on unproven concepts like dark matter and dark energy, which the author likens to Einstein's \"biggest blunder\"—the cosmological constant. It challenges mainstream theories like the multiverse hypothesis and string theory, deeming them untestable and more akin to science fiction. The author suggests these ideas persist due to academic inertia, funding structures, and a lack of critical thinking in scientific education. The piece advocates for acknowledging ignorance, considering alternative theories like MOND, and fostering genuine inquiry.",
+      "topTerms": [
+        {
+          "term": "universe",
+          "frequency": 6
+        },
+        {
+          "term": "cosmology",
+          "frequency": 5
+        },
+        {
+          "term": "theory",
+          "frequency": 5
+        },
+        {
+          "term": "science",
+          "frequency": 5
+        },
+        {
+          "term": "dark matter",
+          "frequency": 4
+        },
+        {
+          "term": "einstein",
+          "frequency": 3
+        },
+        {
+          "term": "constant",
+          "frequency": 3
+        }
+      ],
+      "uniqueContributions": [
+        "This text uniquely frames modern cosmological issues (dark matter, dark energy, multiverse, string theory) as a continuation and amplification of Einstein's original \"biggest blunder\" with the cosmological constant.",
+        "It explicitly links the persistence of these theories to academic funding, career incentives, and a perceived lack of critical thinking in scientific education.",
+        "The author champions Modified Newtonian Dynamics (MOND) as a viable alternative to dark matter that is unfairly ignored by the mainstream."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Einstein Was Wrong\") From dark matter myths to multiverse fantasies, modern cosmology has become a house of cards built on wishful thinking.",
+        "(Quni, 2025, \"Einstein Was Wrong\") Today, this dark energy (alongside “dark matter”) is said to make up 95% of the universe—despite no one having ever directly observed either.",
+        "(Quni, 2025, \"Einstein Was Wrong\") But mainstream cosmology ignores it.",
+        "(Quni, 2025, \"Einstein Was Wrong\") Cosmology’s crisis isn’t just about dark stuff."
+      ],
+      "bibliographicInfo": {
+        "title": "Einstein Was Wrong",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Illusion of Randomness.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "QNFO",
+        "Prime Numbers",
+        "Prime Number Theorem",
+        "Base 10",
+        "Binary"
+      ],
+      "keyPhrases": [
+        "Illusion of Randomness",
+        "Prime numbers",
+        "Deterministic structure",
+        "Algorithmic predictability",
+        "Systems of representation",
+        "Perceived randomness",
+        "Human knowledge limits"
+      ],
+      "themes": [
+        "The perceived randomness of prime numbers is a human-centric illusion.",
+        "Prime numbers are inherently deterministic, fixed by mathematical rules.",
+        "Limitations in human algorithmic capability and representational systems cause the perception of randomness.",
+        "Probabilistic models describe the limits of our knowledge, not the inherent nature of primes."
+      ],
+      "summary": "This text argues that the perceived randomness of prime numbers is an illusion rooted in human limitations, not the numbers' inherent nature. Prime numbers are deterministic, their sequence fixed by arithmetic laws. The apparent irregularity stems from our current inability to predict them easily with simple algorithms and the influence of our number representation systems, such as base 10. Probabilistic tools like the *Prime Number Theorem* describe distribution but reflect the boundaries of our deterministic knowledge. Recent research quantifies specific non-random patterns, further exposing the underlying order. The label \"random\" ultimately signifies the edge of human understanding.",
+      "topTerms": [
+        {
+          "term": "prime",
+          "frequency": 20
+        },
+        {
+          "term": "number",
+          "frequency": 15
+        },
+        {
+          "term": "random",
+          "frequency": 15
+        },
+        {
+          "term": "deterministic",
+          "frequency": 10
+        },
+        {
+          "term": "sequence",
+          "frequency": 8
+        },
+        {
+          "term": "pattern",
+          "frequency": 7
+        },
+        {
+          "term": "system",
+          "frequency": 7
+        }
+      ],
+      "uniqueContributions": [
+        "This text specifically attributes the illusion of randomness in prime numbers to human limitations in algorithmic predictability, computational power, and the choice of representation systems like base 10.",
+        "It clarifies that probabilistic tools, such as the *Prime Number Theorem*, describe the limits of our deterministic knowledge about primes rather than indicating the sequence is generated by chance.",
+        "It highlights how recent research quantifies specific non-random patterns, providing concrete evidence against the statistical randomness of prime distribution."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Illusion of Randomness\") The assertion that prime numbers are random is not merely incorrect; it reveals a fundamental misunderstanding rooted in human perspective, limited tools, and conventional representation systems.",
+        "(Quni, 2025, \"Illusion of Randomness\") There is no element of chance in this status; it is fixed for all eternity by the laws of arithmetic.",
+        "(Quni, 2025, \"Illusion of Randomness\") This deficiency in simple algorithmic predictability is the sole source of the perceived randomness.",
+        "(Quni, 2025, \"Illusion of Randomness\") What we label “random” is, in this profound sense, merely the edge of our own knowledge and the vast, ordered territory that lies just beyond."
+      ],
+      "bibliographicInfo": {
+        "title": "Illusion of Randomness",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org",
+        "sourceName": "QNFO"
+      }
+    },
+    {
+      "fileName": "Illusion of Time.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "Einstein",
+        "Big Bang",
+        "Planck scale",
+        "General Relativity",
+        "CMB",
+        "Informational Universe Hypothesis",
+        "QNFO"
+      ],
+      "keyPhrases": [
+        "Illusion of Time",
+        "Information Dynamics",
+        "resolution-dependent construct",
+        "informational contrasts",
+        "Universal Information",
+        "perceptual capability",
+        "informational states",
+        "statistical biases",
+        "cosmic evolution",
+        "resolution artifact",
+        "observer effect",
+        "cognitive limitation",
+        "quantum systems",
+        "cosmic expansion",
+        "heat death",
+        "informational substrate"
+      ],
+      "themes": [
+        "Time as a resolution-dependent construct",
+        "The Big Bang timeline as a perceptual artifact",
+        "Observer/Cognitive limits shape temporal perception",
+        "Past and future as statistical biases",
+        "Universe's age and end as resolution artifacts"
+      ],
+      "summary": "This text, \"The Illusion of Time in Information Dynamics\" by Rowan Brad Quni, argues that time is not a fundamental property of reality but a construct dependent on the resolution at which observers (human models, Î) parse Universal Information (I). It posits that time emerges from sequencing informational contrasts (κ) at specific resolutions (ε). The Big Bang's 13.8-billion-year timeline is presented as a perceptual artifact, a sequence (τ) imposed by Î's current resolution limits, not an ontological event. The concepts of past, future, cosmic age, and even heat death are described as statistical biases or resolution failures within this framework. The universe's true nature is seen as a timeless continuum of distinctions and sequences awaiting observation.",
+      "topTerms": [
+        {
+          "term": "time",
+          "frequency": 25
+        },
+        {
+          "term": "resolution",
+          "frequency": 15
+        },
+        {
+          "term": "information",
+          "frequency": 10
+        },
+        {
+          "term": "construct",
+          "frequency": 10
+        },
+        {
+          "term": "contrast",
+          "frequency": 10
+        },
+        {
+          "term": "sequence",
+          "frequency": 10
+        },
+        {
+          "term": "big bang",
+          "frequency": 10
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely frames time as a \"resolution-dependent construct\" emerging from the interaction of human models (Î) with Universal Information (I), rather than an inherent property of reality.",
+        "It reinterprets the Big Bang timeline and cosmic age not as absolute events or durations, but as artifacts of perceptual resolution (ε) and the sequencing (τ) of informational contrasts (κ) by observers.",
+        "It proposes that concepts like the universe's beginning and end (e.g., heat death) are local temporal sequences or resolution failures, with the underlying informational substrate existing timelessly."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"The Illusion of Time...\") Time is not a fundamental property of reality but a *resolution-dependent construct*—a sequence (τ) of informational contrasts (κ) that emerge when human models (Î) sharpen their resolution (ε) to parse Universal Information (I).",
+        "(Quni, 2025, \"The Illusion of Time...\") To understand this, we must abandon the idea that time flows universally and recognize it as a narrative imposed by our cognitive and technological limits.",
+        "(Quni, 2025, \"The Illusion of Time...\") The Big Bang’s 13.8-billion-year timeline is a τ sequence imposed by Î at macroscopic ε.",
+        "(Quni, 2025, \"The Illusion of Time...\") Time emerges not from I itself but from the act of observing κ transitions at a specific ε."
+      ],
+      "bibliographicInfo": {
+        "title": "The Illusion of Time in Information Dynamics",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "sourceName": "Illusion of Time"
+      }
+    },
+    {
+      "fileName": "Mathematical Tricks Postulate.md",
+      "entities": [
+        "Mathematical Tricks Postulate",
+        "Quantum Mechanics (QM)",
+        "General Relativity (GR)",
+        "Standard Model (SM)",
+        "ΛCDM model",
+        "Rowan Brad Quni",
+        "Max Planck",
+        "Albert Einstein",
+        "Dark Matter",
+        "Dark Energy"
+      ],
+      "keyPhrases": [
+        "Mathematical Tricks Postulate",
+        "foundational cracks",
+        "post-hoc mathematical constructs",
+        "uninterpreted calculus",
+        "measurement problem",
+        "dark universe",
+        "cosmological constant problem"
+      ],
+      "themes": [
+        "Critique of modern physics' foundational integrity",
+        "Argument that core concepts are mathematical artifacts, not physical reality",
+        "Historical precedents for mathematical expediency over physical understanding",
+        "Systemic methodological failures in physics (confirmation bias, institutional inertia)",
+        "Challenges to standard models in QM, Cosmology, and Particle Physics"
+      ],
+      "summary": "This document, \"The “Mathematical Tricks” Postulate\" by Rowan Brad Quni (Quni, 2025), argues that modern physics, despite its predictive successes (*quantum mechanics*, *general relativity*, *Standard Model*, *ΛCDM model*), suffers from deep foundational flaws. It proposes the \"Mathematical Tricks\" Postulate, asserting that much of 20th/21st-century physics prioritized fitting equations to data and resolving paradoxes using post-hoc mathematical constructs—\"tricks\"—over developing theories based on physical principles. The text examines historical examples like Planck's quantization and Einstein's cosmological constant, and critiques core concepts in *quantum mechanics* (wavefunction, superposition, measurement problem) and *cosmology* (dark matter, dark energy, inflation) as potentially being such mathematical artifacts, suggesting perceived progress may be illusory and raising concerns about systemic intellectual fraud.",
+      "topTerms": [
+        {
+          "term": "mathematical",
+          "frequency": 20
+        },
+        {
+          "term": "physical",
+          "frequency": 19
+        },
+        {
+          "term": "theory",
+          "frequency": 13
+        },
+        {
+          "term": "postulate",
+          "frequency": 10
+        },
+        {
+          "term": "reality",
+          "frequency": 10
+        },
+        {
+          "term": "problem",
+          "frequency": 9
+        },
+        {
+          "term": "understanding",
+          "frequency": 8
+        }
+      ],
+      "uniqueContributions": [
+        "The document explicitly frames core concepts in modern physics (like the quantum wavefunction, dark matter, dark energy) as potentially being 'mathematical tricks' or artifacts rather than representations of physical reality.",
+        "It connects historical instances of mathematical expediency (Planck's quantization, Einstein's cosmological constant) to current issues, arguing they established a problematic precedent.",
+        "It raises the uncomfortable possibility of 'systemic intellectual fraud' within foundational physics, linking it to the reliance on mathematical formalisms over physical insight."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"The “Mathematical Tricks” Postulate\") The “Mathematical Tricks” Postulate asserts that, contrary to the principles of scientific inquiry demanding theories precede and predict observation, much of 20th-century physics embraced post-hoc mathematical constructs as foundational, prioritizing the fitting of equations to data and the resolution of theoretical paradoxes over developing theories with genuine explanatory power derived from underlying physical principles.",
+        "(Quni, 2025, \"The “Mathematical Tricks” Postulate\") This postulate is not a mere suggestion of incompleteness but a direct challenge to the scientific integrity of foundational physics.",
+        "(Quni, 2025, \"The “Mathematical Tricks” Postulate\") The century-long failure to establish *what quantum mechanics actually says about the world* is not a philosophical footnote but a damning indictment of the theory’s foundational integrity.",
+        "(Quni, 2025, \"The “Mathematical Tricks” Postulate\") Modern cosmology, dominated by the ΛCDM (Lambda Cold Dark Matter) model, presents perhaps the most glaring evidence supporting the Mathematical Tricks Postulate."
+      ],
+      "bibliographicInfo": {
+        "title": "The “Mathematical Tricks” Postulate",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025"
+      }
+    },
+    {
+      "fileName": "N=1 Problem.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "QNFO",
+        "Earth",
+        "Human consciousness",
+        "Contemplative Science",
+        "Astrobiology",
+        "Cosmology"
+      ],
+      "keyPhrases": [
+        "N=1 problem",
+        "human consciousness",
+        "subjective experience",
+        "cosmic evolution",
+        "Contemplative Science",
+        "first-person inquiry",
+        "scientific understanding"
+      ],
+      "themes": [
+        "The statistical limitation of N=1 in understanding life and consciousness in the universe",
+        "The paradox of human consciousness as the sole data point and the basis of scientific inquiry",
+        "The necessity of investigating subjective experience as a valid path to understanding consciousness",
+        "The potential of Contemplative Science as an approach to the N=1 problem"
+      ],
+      "summary": "This text explores the \"N=1 Problem,\" the fundamental statistical limitation in astrobiology and cosmology stemming from having only one known instance of life and consciousness (Earth/human). It argues that while this limits our ability to generalize outward about the universe, our own consciousness is simultaneously the only direct reality we experience and the foundation of all scientific inquiry. The author proposes that a rigorous investigation of subjective experience, potentially through an approach termed \"Contemplative Science,\" is a necessary and valid scientific and philosophical endeavor to understand the nature and potential of consciousness, offering unique insights despite the N=1 constraint.",
+      "topTerms": [
+        {
+          "term": "consciousness",
+          "frequency": 10
+        },
+        {
+          "term": "science",
+          "frequency": 8
+        },
+        {
+          "term": "problem",
+          "frequency": 4
+        },
+        {
+          "term": "understanding",
+          "frequency": 4
+        },
+        {
+          "term": "experience",
+          "frequency": 4
+        },
+        {
+          "term": "reality",
+          "frequency": 3
+        },
+        {
+          "term": "subjective",
+          "frequency": 3
+        }
+      ],
+      "uniqueContributions": [
+        "This text uniquely frames the N=1 problem not just as a statistical limitation for external search, but as a compelling argument for the scientific and philosophical centrality of investigating subjective experience.",
+        "It proposes \"Contemplative Science\" as a specific approach to address the N=1 problem by rigorously exploring the single sample of consciousness we possess."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"N=1 Problem\") Yet, all these outward-looking endeavors slam into a stark, unyielding statistical wall: the N=1 problem.",
+        "(Quni, 2025, \"N=1 Problem\") Our entire scientific understanding of what life *is*, how it arises, how intelligence evolves, and what consciousness entails is built upon this single data point.",
+        "(Quni, 2025, \"N=1 Problem\") While science rightly strives for objectivity, falsifiability, and intersubjective verification in its models of the external world, it cannot escape the fact that these models are constructed *by* and ultimately make sense *within* the framework of human consciousness–our N=1 reality.",
+        "(Quni, 2025, \"N=1 Problem\") If the outward search for cosmic companionship is statistically blind, perhaps the most rigorous path to understanding the *potential* of consciousness lies in the deep, systematic investigation of the single sample we undeniably possess: our own minds, individually and collectively."
+      ],
+      "bibliographicInfo": {
+        "title": "N=1 Problem",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Quantum-Clasical Divide.md",
+      "entities": [
+        "Quantum-Classical Divide",
+        "Quantum Mechanics",
+        "Classical Physics",
+        "Rowan Brad Quni",
+        "QNFO",
+        "Einstein",
+        "Artificial Intelligence",
+        "Information Theory",
+        "Informational Universe Hypothesis"
+      ],
+      "keyPhrases": [
+        "human-created illusion",
+        "seamless continuum",
+        "binary thinking",
+        "resolution artifact",
+        "continuous gradient",
+        "precision engineering",
+        "reality's HD resolution"
+      ],
+      "themes": [
+        "The quantum-classical divide is a product of human perception and limited tools, not nature.",
+        "Reality exists as a continuous gradient, not in discrete binary states.",
+        "Our scientific instruments impose artificial divisions (binaries) on a fluid reality.",
+        "Overcoming the perceived divide requires better tools and a shift from binary thinking to recognizing continua.",
+        "The universe operates in a single, high-definition reality."
+      ],
+      "summary": "This text, titled \"Quantum-Classical “Divide:” A Human-Created Illusion\" by Rowan Brad Quni (Quni, 2025), argues that the perceived division between quantum and classical physics is not inherent to the universe but is a construct of human perception and the limitations of our observational tools. Using analogies like flat Earth maps and low-resolution weather reports, the author posits that reality exists as a seamless continuum or \"HD resolution.\" What we call \"classical\" is merely a low-resolution approximation resulting from tools that impose binaries on this fluid reality. The text suggests that phenomena like quantum \"collapse\" are simply \"resolution artifacts.\" Dissolving this illusion requires better tools capable of perceiving reality's continuous nature.",
+      "topTerms": [
+        {
+          "term": "reality",
+          "frequency": 6
+        },
+        {
+          "term": "tool",
+          "frequency": 6
+        },
+        {
+          "term": "divide",
+          "frequency": 5
+        },
+        {
+          "term": "quantum",
+          "frequency": 5
+        },
+        {
+          "term": "classical",
+          "frequency": 4
+        },
+        {
+          "term": "nature",
+          "frequency": 4
+        },
+        {
+          "term": "continuum",
+          "frequency": 3
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely frames the quantum-classical divide as a \"human-created illusion\" stemming from limited \"resolution\" of our tools and \"binary thinking.\"",
+        "It proposes that phenomena like wave function \"collapse\" are merely \"resolution artifacts,\" akin to mistaking a gradient for a binary due to coarse measurement.",
+        "The core argument is that the universe operates in a single, \"high definition\" reality, and the perceived divide is a \"myth of resolution, not reality.\""
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Quantum-Classical “Divide:” A Human-Created Illusion\") This divide is not inherent to the cosmos—it’s a construct of human perception and the tools we’ve used to observe it.",
+        "(Quni, 2025, \"Quantum-Classical “Divide:” A Human-Created Illusion\") What we call “quantum” is reality’s *native HD resolution*, where distinctions between states exist along a fluid gradient.",
+        "(Quni, 2025, \"Quantum-Classical “Divide:” A Human-Created Illusion\") The illusion of “collapse”—the idea that a quantum state “chooses” one outcome—is just a *resolution artifact*, like mistaking a gradient for a binary due to limited precision.",
+        "(Quni, 2025, \"Quantum-Classical “Divide:” A Human-Created Illusion\") The framework is simple: **there is no quantum-classical divide**."
+      ],
+      "bibliographicInfo": {
+        "title": "Quantum-Classical “Divide:” A Human-Created Illusion",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Quantum Confusion.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "Quantum mechanics",
+        "Information Dynamics",
+        "Planck scale",
+        "Calculus",
+        "Ptolemy",
+        "Informational Universe Hypothesis"
+      ],
+      "keyPhrases": [
+        "Information Dynamics",
+        "quantum mechanics",
+        "Planck scale",
+        "informational universe",
+        "wavefunction collapse",
+        "resolution mismatch",
+        "continuum of oppositions"
+      ],
+      "themes": [
+        "Distinguishing information from physical constructs in physics",
+        "Reinterpreting quantum phenomena through Information Dynamics",
+        "Critique of human constructs (like Planck scale, calculus) as limits",
+        "The universe as a continuum of informational distinctions",
+        "Measurement as a process of resolving information at specific resolutions"
+      ],
+      "summary": "This text, \"Quantum Confusion\" by Rowan Brad Quni, argues that much of the confusion in physics, particularly quantum mechanics, arises from conflating informational distinctions (the universe's substrate) with physical constructs and measurements (our models). It proposes Information Dynamics as a framework to separate these, viewing quantum phenomena like superposition, entanglement, and wavefunction collapse not as physical paradoxes but as consequences of resolution mismatches in measurement. The author contends that concepts like the Planck scale, absolute zero, and calculus are human-imposed asymptotes or tools, not intrinsic limits of reality. The universe is described as a continuum of oppositions and distinctions existing at infinite resolutions, where our models are provisional lenses, not ultimate truths.",
+      "topTerms": [
+        {
+          "term": "information",
+          "frequency": 11
+        },
+        {
+          "term": "resolution",
+          "frequency": 10
+        },
+        {
+          "term": "quantum",
+          "frequency": 9
+        },
+        {
+          "term": "distinction",
+          "frequency": 8
+        },
+        {
+          "term": "scale",
+          "frequency": 7
+        },
+        {
+          "term": "universe",
+          "frequency": 6
+        },
+        {
+          "term": "construct",
+          "frequency": 5
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely frames quantum confusion and measurement limits as stemming from a 'resolution mismatch' between the universe's Planck-scale informational distinctions and human-scale measurement tools, rather than inherent physical paradoxes.",
+        "It posits that concepts like the Planck scale and absolute zero are not fundamental boundaries but 'asymptotes' imposed by the resolution of our tools, arguing that existence persists at finer informational layers.",
+        "The essay proposes that Information Dynamics offers a lens to see reality as a 'continuum of oppositions' encoded at infinite resolutions, recontextualizing physical laws and mathematical tools like calculus as subsets or approximations within this informational framework."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Quantum Confusion\") The interplay between information and spacetime lies at the heart of a profound confusion in physics—one that blurs the line between what we *measure* and what *exists*.",
+        "(Quni, 2025, \"Quantum Confusion\") The “collapse” is not an ontological event but a *resolution mismatch*—the coarse lens of macroscopic measurement discards finer informational layers.",
+        "(Quni, 2025, \"Quantum Confusion\") Human constructs like the Planck scale or absolute zero are not intrinsic boundaries of the universe but *asymptotes* imposed by the resolution (ε) of our tools.",
+        "(Quni, 2025, \"Quantum Confusion\") The essay’s core argument is philosophical: our models are tools, not truths."
+      ],
+      "bibliographicInfo": {
+        "title": "Quantum Confusion",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Quantum Fraud.md",
+      "entities": [
+        "Max Planck",
+        "Albert Einstein",
+        "Paul Dirac",
+        "Fritz Zwicky",
+        "Quantum Mechanics",
+        "General Relativity",
+        "Dark Matter",
+        "String Theory",
+        "Higgs Boson",
+        "Multiverse Hypothesis"
+      ],
+      "keyPhrases": [
+        "mathematical cult",
+        "ultraviolet catastrophe",
+        "cosmological constant",
+        "dark energy",
+        "dark matter",
+        "modified Newtonian dynamics",
+        "empirical verification",
+        "falsifiability"
+      ],
+      "themes": [
+        "Over-reliance on mathematical formalism in theoretical physics",
+        "Lack of empirical grounding and falsifiability in modern physics theories",
+        "Historical examples of mathematical constructs treated as physical reality",
+        "Critique of the search for hypothetical particles and entities",
+        "Call for a return to empirical rigor and skepticism"
+      ],
+      "summary": "This text, *Quantum Fraud*, by Rowan Brad Quni, critiques modern theoretical physics, arguing it has become a \"mathematical cult\" prioritizing formalism over empirical reality. It traces this trend from Max Planck's \"act of desperation\" with the quantum hypothesis in 1900, through Einstein's cosmological constant, Dirac's antimatter, the search for dark matter, and culminating in theories like String Theory and the Multiverse Hypothesis. The author contends that physics has spent over a century chasing entities born from mathematical necessity rather than empirical observation, leading to unfalsifiable theories and a detachment from explaining the observable universe. The piece calls for a return to rigorous empirical verification and falsifiability.",
+      "topTerms": [
+        {
+          "term": "mathematical",
+          "frequency": 15
+        },
+        {
+          "term": "physics",
+          "frequency": 11
+        },
+        {
+          "term": "theory",
+          "frequency": 10
+        },
+        {
+          "term": "quantum",
+          "frequency": 9
+        },
+        {
+          "term": "empirical",
+          "frequency": 7
+        },
+        {
+          "term": "reality",
+          "frequency": 6
+        },
+        {
+          "term": "observation",
+          "frequency": 6
+        }
+      ],
+      "uniqueContributions": [
+        "This text presents a strong, polemical argument framing the historical development of theoretical physics, from Planck to String Theory, as a continuous descent into \"fraud\" driven by mathematical convenience over empirical truth.",
+        "It uniquely connects disparate concepts like the quantum hypothesis, cosmological constant, dark matter, and antimatter under the single critical umbrella of prioritizing mathematical formalism and unfalsifiability.",
+        "The piece argues that even discoveries like the Higgs Boson can be viewed not as profound insights into nature, but as expensive validations of pre-existing mathematical structures."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Quantum Fraud\") His “quantum hypothesis” was, by his own admission, a “purely formal assumption,” a mathematical trick with no grounding in physical reality.",
+        "(Quni, 2025, \"Quantum Fraud\") This is the story of how physics became a faith-based enterprise, where mathematical elegance replaced empirical rigor, and where the greatest fraud was not in the data, but in the dogma.",
+        "(Quni, 2025, \"Quantum Fraud\") Proposing that our universe is merely one bubble in an infinite cosmic ocean of other universes—potentially with different physical laws or constants—provides a convenient excuse for any theoretical model that doesn’t match our specific reality.",
+        "(Quni, 2025, \"Quantum Fraud\") Until that philosophical reorientation takes place, until mathematical speculation is once again firmly subordinated to empirical verification and falsifiability, theoretical physics risks its reputation, potentially standing as the greatest, most elaborate intellectual fraud of the modern age."
+      ],
+      "bibliographicInfo": {
+        "title": "Quantum Fraud",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Skeptical Journey through Conventional Reality.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "Large Hadron Collider",
+        "Anthropic Principle",
+        "multiverse",
+        "Higgs field",
+        "Standard Model",
+        "Integrated Information Theory",
+        "Global Workspace Theory",
+        "Earth",
+        "QNFO"
+      ],
+      "keyPhrases": [
+        "conventional reality",
+        "skeptical journey",
+        "informational ontology",
+        "Hard Problem",
+        "N=1 sample size",
+        "wave-particle duality",
+        "synaptic plasticity"
+      ],
+      "themes": [
+        "Critique of conventional scientific paradigms (physics, neuroscience)",
+        "Proposal of an information-centric view of reality",
+        "Challenges in understanding consciousness and subjective experience",
+        "Skepticism regarding the frequency of life/intelligence in the cosmos",
+        "Call for intellectual humility and foundational questioning"
+      ],
+      "summary": "This text, *Skeptical Journey through Conventional Reality* by Rowan Brad Quni, critically examines fundamental assumptions in conventional science, particularly physics and neuroscience. It questions methodological principles like unification and naturalness in physics, highlights paradoxes like the nature of massless particles, and challenges standard models of neural processing and memory. The author argues that current paradigms struggle with consciousness and the subjective dimension. Drawing on the \"N=1 sample size\" of Earth, the text expresses skepticism about the commonality of life and intelligence in the universe. It proposes an information-centric ontology as a potential framework to address these challenges, advocating for intellectual humility and a deeper look at foundational questions.",
+      "topTerms": [
+        {
+          "term": "information",
+          "frequency": 10
+        },
+        {
+          "term": "reality",
+          "frequency": 7
+        },
+        {
+          "term": "scientific",
+          "frequency": 6
+        },
+        {
+          "term": "conventional",
+          "frequency": 5
+        },
+        {
+          "term": "consciousness",
+          "frequency": 5
+        },
+        {
+          "term": "understanding",
+          "frequency": 5
+        },
+        {
+          "term": "principle",
+          "frequency": 5
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely frames the challenges across physics (massless particles, methodological dogmas), neuroscience (beyond spikes/synapses, memory storage), and astrobiology (N=1 sample size) as stemming from potential limitations of current materialist/computational paradigms.",
+        "It explicitly proposes an information-centric ontology as a unifying alternative framework capable of addressing paradoxes and providing a richer understanding of phenomena from fundamental particles to consciousness.",
+        "It connects the 'Great Silence' in astrobiology directly to the N=1 sample size argument, suggesting rarity is the most parsimonious explanation, challenging common assumptions about the inevitability of intelligence."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Skeptical Journey through Conventional Reality\") Yet, a persistent, nagging skepticism, one grounded not in denial but in the rigorous application of logic and a hard look at the evidence, suggests these narratives might be incomplete, perhaps even fundamentally flawed.",
+        "(Quni, 2025, \"Skeptical Journey through Conventional Reality\") Was naturalness a genuine insight, or was it a methodological dogma, an aesthetic prejudice against certain numerical relationships that nature simply doesn’t share?",
+        "(Quni, 2025, \"Skeptical Journey through Conventional Reality\") An information-centric perspective offers a potential way forward.",
+        "(Quni, 2025, \"Skeptical Journey through Conventional Reality\") Our **N=1 sample size**–Earth–prevents us from empirically determining the likelihood of clearing the critical biological hurdles: abiogenesis, eukaryogenesis, complex multicellularity, technological intelligence."
+      ],
+      "bibliographicInfo": {
+        "title": "Skeptical Journey through Conventional Reality",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Statistics of Possibility.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "QNFO",
+        "Information Dynamics (ID)",
+        "Planck-scale resolution",
+        "Gödel's incompleteness theorems",
+        "Big Bang",
+        "CMB Anisotropies"
+      ],
+      "keyPhrases": [
+        "statistics of possibility",
+        "Information Dynamics",
+        "Planck-scale resolution",
+        "arrow of time",
+        "Gödelian limits",
+        "informational substrate",
+        "entropy as a statistical mirage"
+      ],
+      "themes": [
+        "Reinterpreting entropy through Information Dynamics",
+        "The statistical nature of possibility and time",
+        "The role of contrast, sequence, and repetition in existence",
+        "Overcoming limitations of numeric models with finer resolution",
+        "Human innovation as alignment with informational principles"
+      ],
+      "summary": "This essay, *Statistics of Possibility*, by Rowan Brad Quni, redefines entropy not as decay but as a measure of statistical improbability within an informational universe. Using the framework of Information Dynamics (ID) and concepts like contrast (κ), sequence (τ), and repetition (ρ), it argues that the \"arrow of time\" and apparent disorder are statistical biases, not deterministic laws. The text posits that possibility is inherent in the universe's informational substrate, accessible through finer resolution (ε) and mimicry (m), challenging fatalistic views and numeric biases like those highlighted by Gödel's theorems. It suggests innovation aligns with these principles, offering a new perspective on physics, consciousness, and technology.",
+      "topTerms": [
+        {
+          "term": "possibility",
+          "frequency": 11
+        },
+        {
+          "term": "entropy",
+          "frequency": 10
+        },
+        {
+          "term": "statistical",
+          "frequency": 9
+        },
+        {
+          "term": "information",
+          "frequency": 8
+        },
+        {
+          "term": "resolution",
+          "frequency": 8
+        },
+        {
+          "term": "mimicry",
+          "frequency": 7
+        },
+        {
+          "term": "universe",
+          "frequency": 6
+        }
+      ],
+      "uniqueContributions": [
+        "The text proposes a specific framework using κ, τ, ρ, ε, and m to quantify possibility and reinterpret entropy within an informational universe model.",
+        "It argues that the \"arrow of time\" is a statistical bias towards higher-entropy states, not an inherent directionality of sequence (τ).",
+        "It suggests that overcoming limitations like Gödelian traps and achieving complex phenomena (e.g., quantum coherence, consciousness) relies on operating at finer resolutions (ε) and leveraging mimicry (m)."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Statistics of Possibility\") The universe is not a tale of inevitability but a probabilistic tapestry where every moment teeters between decay and creation, governed by the silent arithmetic of possibility.",
+        "(Quni, 2025, \"Statistics of Possibility\") Entropy, often conflated with decay, is better understood as a measure of *statistical improbability*.",
+        "(Quni, 2025, \"Statistics of Possibility\") The “arrow of time” emerges not from an inherent directionality of τ but from the overwhelming statistical bias toward higher-entropy states, where distinctions aggregate into gradients like thermal noise or cosmic expansion.",
+        "(Quni, 2025, \"Statistics of Possibility\") The statistics of possibility are not a metaphor—they are the universe’s calculus, written in the language of κ, ρ, and τ."
+      ],
+      "bibliographicInfo": {
+        "title": "Statistics of Possibility",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025"
+      }
+    },
+    {
+      "fileName": "Temporal Fixation.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "Ptolemy",
+        "Maya",
+        "Aztecs",
+        "Zeno",
+        "Information Dynamics",
+        "Taoism",
+        "Big Bang",
+        "Yuval Noah Harari",
+        "I Ching"
+      ],
+      "keyPhrases": [
+        "Temporal Fixation",
+        "Information Dynamics",
+        "cyclical patterns",
+        "numeric grids",
+        "arrow of time",
+        "Planck-scale resolutions",
+        "models for reality"
+      ],
+      "themes": [
+        "Critique of linear time constructs",
+        "Time as cyclical and relational",
+        "Distinction between models and reality",
+        "Existence as distinctions vs. coordinates",
+        "Integration of physics, philosophy, and ancient perspectives on time"
+      ],
+      "summary": "The text \"Temporal Fixation\" argues that humanity mistakes its models of time (clocks, calendars, equations) for reality, much like Ptolemy's geocentric model. It posits that time is fundamentally cyclical and relational, based on distinctions between oppositions, rather than a linear progression or numeric coordinate. Concepts like leap years and singularities are seen as failures of linear models to capture nature's rhythms. Frameworks like Information Dynamics and ancient calendars (Maya, Aztec) are presented as alternative ways of viewing time as nested cycles. The \"arrow of time\" is described as a statistical emergence, not an ontological truth. The core message is that models are provisional tools, and reality resists being confined by human constructs, emphasizing existence as distinctions.",
+      "topTerms": [
+        {
+          "term": "time",
+          "frequency": 15
+        },
+        {
+          "term": "model",
+          "frequency": 6
+        },
+        {
+          "term": "nature",
+          "frequency": 4
+        },
+        {
+          "term": "cycle",
+          "frequency": 4
+        },
+        {
+          "term": "distinction",
+          "frequency": 4
+        },
+        {
+          "term": "reality",
+          "frequency": 4
+        },
+        {
+          "term": "system",
+          "frequency": 3
+        }
+      ],
+      "uniqueContributions": [
+        "This text uniquely frames the human concept of linear time and its associated paradoxes (like Zeno's arrow or black hole singularities) as a fundamental error of mistaking models for reality, drawing parallels to Ptolemy's geocentric model.",
+        "It proposes viewing time not as a measured quantity but as a relationship between oppositions, suggesting frameworks like Information Dynamics and ancient cyclical calendars offer a more aligned perspective with nature's rhythms.",
+        "The piece argues that the 'arrow of time' is a statistical phenomenon arising from probability in cyclical systems, rather than an inherent directional property of existence."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Temporal Fixation\") Humanity’s quest to understand time has always been a mirror reflecting our deepest assumptions about existence.",
+        "(Quni, 2025, \"Temporal Fixation\") The problem wasn’t Ptolemy’s math; it was the *premise* that Earth was the center of all motion.",
+        "(Quni, 2025, \"Temporal Fixation\") Time, in its rawest form, is not a linear river but a tapestry of cyclical patterns.",
+        "(Quni, 2025, \"Temporal Fixation\") The danger lies in mistaking models for reality."
+      ],
+      "bibliographicInfo": {
+        "title": "Temporal Fixation",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025"
+      }
+    },
+    {
+      "fileName": "Ten-Fingered Trap.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "Pierre-Simon Laplace",
+        "Acanthostega",
+        "Babylonian sexagesimal system",
+        "Indian subcontinent",
+        "Holographic principle",
+        "Metric system",
+        "Pi",
+        "Golden ratio",
+        "Speed of light"
+      ],
+      "keyPhrases": [
+        "decimal system",
+        "base-10",
+        "finger-counting",
+        "positional decimal system",
+        "holographic principle",
+        "physical constants",
+        "mathematical constants"
+      ],
+      "themes": [
+        "The anthropocentric origin of the base-10 numerical system",
+        "Limitations of base-10 for representing fractions and in digital computing",
+        "Contrast between human-derived conventions (base-10, metric units) and fundamental mathematical/physical constants",
+        "Implications of modern physics (like the holographic principle) for our descriptive frameworks",
+        "The need for potentially less anthropocentric mathematical tools for deeper scientific understanding"
+      ],
+      "summary": "This text, \"Ten-Fingered Trap\", argues that the dominance of the base-10 numerical system stems from the biological accident of having ten fingers, not mathematical superiority. It contrasts this anthropocentric origin with alternative bases and natural cycles, highlighting base-10's limitations in representing common fractions and its friction with binary computing. The author distinguishes fundamental mathematical constants (like Pi) from unit-dependent physical constants (*c*, *h*), arguing the latter are tied to our decimal-based measurement conventions (like the metric system). Modern physics, particularly the holographic principle, is presented as challenging our base-10 and unit-dependent descriptions of reality, suggesting a need for evolving our mathematical tools to better align with potentially deeper, information-based structures of the universe. References include *Exposition du système du monde* by Laplace and research on language and base-10 learning.",
+      "topTerms": [
+        {
+          "term": "base",
+          "frequency": 25
+        },
+        {
+          "term": "system",
+          "frequency": 18
+        },
+        {
+          "term": "decimal",
+          "frequency": 17
+        },
+        {
+          "term": "mathematical",
+          "frequency": 13
+        },
+        {
+          "term": "finger",
+          "frequency": 10
+        },
+        {
+          "term": "constant",
+          "frequency": 9
+        },
+        {
+          "term": "principle",
+          "frequency": 8
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely frames the base-10 system's dominance as a \"Ten-Fingered Trap,\" arguing its origin in human anatomy (finger-counting) is a biological accident that has constrained scientific thought.",
+        "It draws a clear distinction between fundamental mathematical constants (like Pi) and physical constants (*c*, *h*), asserting the latter's numerical values are artifacts of our arbitrary, decimal-based measurement units.",
+        "It connects the anthropocentric nature of base-10 and decimal units directly to the challenges posed by modern physics concepts like the holographic principle, suggesting our current descriptive tools may be inadequate for understanding deeper layers of reality."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Ten-Fingered Trap\") However, this perceived inevitability masks a crucial understanding: the system’s dominance appears to stem not from any inherent mathematical superiority or alignment with universal principles, but rather from the practical convenience afforded by human anatomy—specifically, the ten fingers readily available for counting.",
+        "(Quni, 2025, \"Ten-Fingered Trap\") Our path reflects an anthropocentric worldview solidifying itself at the very foundation of quantitative thought.",
+        "(Quni, 2025, \"Ten-Fingered Trap\") The triumph was that of mathematical insight applied to a convenient scaffold, not proof of the scaffold’s own inherent superiority.",
+        "(Quni, 2025, \"Ten-Fingered Trap\") This implies that our familiar three spatial dimensions might not be fundamental, but rather an emergent phenomenon arising from a more basic, potentially two-dimensional, information-theoretic reality."
+      ],
+      "bibliographicInfo": {
+        "title": "Ten-Fingered Trap",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    },
+    {
+      "fileName": "Why Models Fail.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "Information Dynamics",
+        "Universal Information",
+        "Dark matter",
+        "Quantum Mechanics",
+        "General Relativity",
+        "Cosmological constant problem",
+        "Einstein",
+        "Newtonian gravity",
+        "Resolution parameter (ε)"
+      ],
+      "keyPhrases": [
+        "Resolution parameter (ε)",
+        "Information Dynamics",
+        "Universal Information",
+        "Dark matter problem",
+        "Quantum-classical incompatibility",
+        "Cosmological constant problem",
+        "Resolution-dependent approximations"
+      ],
+      "themes": [
+        "The resolution parameter (ε) as a fundamental limit on scientific models",
+        "Reinterpreting physics problems (dark matter, quantum-classical incompatibility, cosmological constant) as artifacts of resolution mismatches",
+        "Information Dynamics as a framework for understanding model limitations",
+        "The scale-sensitive nature of reality and Universal Information",
+        "Scientific progress as refining resolution rather than discovering new entities"
+      ],
+      "summary": "This essay, *Why Models Fail: The Resolution Parameter in Information Dynamics*, argues that scientific model failures stem from mismatches between the model's resolution parameter (ε) and the system's intrinsic structure, not flaws in reality. Grounded in Information Dynamics, it posits that phenomena like dark matter, quantum-classical incompatibility, and the cosmological constant problem are artifacts of resolution-dependent approximations. The text suggests that ε defines what is observable and shapes our descriptive frameworks. It uses historical examples like Mercury's orbit (Einstein vs. Newton) and modern challenges to illustrate how refining ε can dissolve synthetic constructs and lead to a more accurate representation of reality, emphasizing that all models are temporary and limited by resolution.",
+      "topTerms": [
+        {
+          "term": "resolution",
+          "frequency": 14
+        },
+        {
+          "term": "information",
+          "frequency": 13
+        },
+        {
+          "term": "model",
+          "frequency": 8
+        },
+        {
+          "term": "system",
+          "frequency": 4
+        },
+        {
+          "term": "contrast",
+          "frequency": 4
+        },
+        {
+          "term": "framework",
+          "frequency": 4
+        },
+        {
+          "term": "scale",
+          "frequency": 4
+        }
+      ],
+      "uniqueContributions": [
+        "The central unique contribution is the proposal that the resolution parameter (ε) is the primary cause of scientific model failures, reframing major physics problems like dark matter and the cosmological constant as artifacts of resolution mismatches within the framework of Information Dynamics.",
+        "It argues that scientific progress is fundamentally about refining ε and developing resolution-aware frameworks, rather than solely discovering new physical entities."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Why Models Fail: The...\") This essay argues that such failures stem not from flaws in reality itself but from mismatches between the resolution parameter (ε) and the intrinsic structure of the system under study.",
+        "(Quni, 2025, \"Why Models Fail: The...\") Dark matter is not a physical entity but a placeholder compensating for unresolved contrasts.",
+        "(Quni, 2025, \"Why Models Fail: The...\") Their conflict arises from non-overlapping ε regimes, not fundamental discord.",
+        "(Quni, 2025, \"Why Models Fail: The...\") The universe is not broken; our maps are."
+      ],
+      "bibliographicInfo": {
+        "title": "Why Models Fail: The Resolution Parameter in Information Dynamics",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org",
+        "uncertainFields": [
+          "year",
+          "documentType",
+          "url"
+        ]
+      }
+    },
+    {
+      "fileName": "Wifi Emits Photons.md",
+      "entities": [
+        "Rowan Brad Quni",
+        "Quantum Mechanics",
+        "Information Theory",
+        "Informational Universe Hypothesis",
+        "Hologram",
+        "Wi-Fi",
+        "X-Rays",
+        "Electron Microscopes",
+        "Double-slit experiment",
+        "Entanglement"
+      ],
+      "keyPhrases": [
+        "Information System",
+        "Physical Reality",
+        "Structured Data",
+        "Electromagnetic Spectrum",
+        "Wave-particle Duality",
+        "Quantum Fields",
+        "Informational Substrate"
+      ],
+      "themes": [
+        "Reality is fundamentally an information system, not composed of physical 'stuff'.",
+        "Current physics language (particles, waves, collapse) is outdated and misleading.",
+        "Everyday phenomena (Wi-Fi, holograms) and quantum effects provide evidence for an informational reality.",
+        "Photons are carriers of information, not classical particles.",
+        "Observable outcomes in quantum mechanics depend on information extraction, not wavefunction collapse."
+      ],
+      "summary": "This text, titled \"Wifi Emits Photons\" by Rowan Brad Quni, argues that reality is fundamentally an information system, not made of particles or waves. It posits that what we perceive as physical phenomena are structured data being processed. The author uses examples like holograms, Wi-Fi signals, X-rays, electron microscopes, and quantum mechanics (double-slit experiment, entanglement) to support the claim that these operate based on information exchange and processing. The text critiques the traditional language of physics, suggesting it obscures the true informational nature of reality and concludes that information is the primary currency of the universe.",
+      "topTerms": [
+        {
+          "term": "information",
+          "frequency": 14
+        },
+        {
+          "term": "reality",
+          "frequency": 7
+        },
+        {
+          "term": "system",
+          "frequency": 5
+        },
+        {
+          "term": "photon",
+          "frequency": 5
+        },
+        {
+          "term": "physical",
+          "frequency": 5
+        },
+        {
+          "term": "quantum",
+          "frequency": 5
+        },
+        {
+          "term": "hologram",
+          "frequency": 4
+        }
+      ],
+      "uniqueContributions": [
+        "The text uniquely frames common technologies like Wi-Fi and electron microscopes as direct empirical evidence for an informational universe, challenging the conventional 'particle' view.",
+        "It reinterprets quantum phenomena like the double-slit experiment and entanglement not as 'wave-particle duality' or 'collapse', but as behaviors constrained by information extractability."
+      ],
+      "keyExcerpts": [
+        "(Quni, 2025, \"Wifi Emits Photons\") The universe isn’t made of particles, waves, or even “stuff” in the traditional sense.",
+        "(Quni, 2025, \"Wifi Emits Photons\") Every so-called “physical” phenomenon—light, matter, even your own perception of depth and solidity—is just **structured data being processed in real time**.",
+        "(Quni, 2025, \"Wifi Emits Photons\") The takeaway is clear: photons are not “things” but *carriers of information*.",
+        "(Quni, 2025, \"Wifi Emits Photons\") Reality isn’t physical. It’s rendered."
+      ],
+      "bibliographicInfo": {
+        "title": "Wifi Emits Photons",
+        "documentType": "manuscript",
+        "authors": [
+          "Rowan Brad Quni"
+        ],
+        "year": "2025",
+        "url": "http://qnfo.org"
+      }
+    }
+  ],
+  "batchAnalysis": {
+    "consolidatedBatchSummary": "This collection of documents, part of the \"Problems with Science (2025 releases)\" series by Rowan Brad Quni, presents a fundamental critique of modern physics and cosmology. It argues that many perceived mysteries and foundational concepts (like the Big Bang, dark matter, dark energy, time, and quantum phenomena) are not inherent features of reality but rather artifacts of human models, limitations in resolution, over-reliance on mathematical formalism, and methodological flaws. The texts advocate for a shift towards an Information Ontology (IO) framework, where information is primary and logic subordinates mathematics, and highlight the limits of observation (like the N=1 problem) and the need for critical thinking over institutional groupthink.",
+    "crossFileThemes": [
+      "Critique of modern physics and cosmology (Standard Model, Lambda CDM)",
+      "Limitations of mathematical formalism in describing reality",
+      "Information as the fundamental substance of reality (Information Ontology)",
+      "Perceived phenomena (time, Big Bang, dark matter) as artifacts of human models/resolution limits",
+      "The need for critical thinking and challenging scientific dogma",
+      "Resolution and contrast as key concepts in understanding reality/perception",
+      "Questioning the foundational integrity of established theories"
+    ],
+    "recurringEntitiesAndPhrases": [
+      "Information",
+      "Resolution",
+      "Model",
+      "Mathematical formalism",
+      "Big Bang",
+      "Dark matter/energy",
+      "Cosmological constant",
+      "Time",
+      "Ontology",
+      "Critique",
+      "Limitation",
+      "Framework"
+    ],
+    "emergentPatternsOrInsights": [
+      "The critique of specific physical concepts (Big Bang, dark matter, time) is unified by a core argument that they are manifestations of 'resolution mismatch' or limitations of human models (Î) interacting with Universal Information (I).",
+      "The over-reliance on mathematical formalism ('Mathematical Tricks Postulate') is presented as a root cause of foundational problems in physics, leading to ad-hoc concepts like dark matter/energy and the cosmological constant.",
+      "The 'N=1 Problem' in cosmology/astrobiology is implicitly linked to the 'Illusion of Time' and 'Before the Big Bang' arguments, suggesting that our perception of the universe is fundamentally limited by our single point of observation (human consciousness/models) and its inherent resolution limits.",
+      "The collection collectively argues that addressing the 'problems with science' requires a fundamental shift in perspective from a physics-centric, math-driven approach to an information-centric, logic-driven ontology, coupled with rigorous self-critique of scientific methodology and perception."
+    ],
+    "dominantSentiment": "critical",
+    "keyInterconnections": [
+      "\"Beyond the Tyranny of Math\" introduces Information Ontology (IO) as a preferred framework, which is then positioned against other frameworks in \"Comparing Fundamental Frameworks\" and provides the theoretical basis for arguments in \"Illusion of Time\" and \"Before the Big Bang\".",
+      "\"The Cosmological Constant Crisis\" and \"Einstein was Wrong\" specifically critique core elements of modern cosmology (Lambda CDM, dark matter/energy), providing concrete examples that support the broader methodological critique presented in \"The “Mathematical Tricks” Postulate\".",
+      "The concept of 'resolution' introduced in \"Before the Big Bang\" and central to the argument in \"The Illusion of Time\" serves as a unifying principle explaining perceived phenomena (Big Bang, time, photons, black holes) as artifacts of observational limits, connecting these seemingly disparate topics."
+    ],
+    "prominentCrossFileEntities": [
+      {
+        "entity": "Information",
+        "mentionedInFiles": [
+          "(Quni, 2025, \"Before The Big Bang: What Photons and Black Holes Have in Common\")",
+          "(Quni, 2025, \"Beyond the Tyranny of Mathematical Formalism\")",
+          "(Quni, 2025, \"Comparing Fundamental Frameworks\")",
+          "(Quni, 2025, \"The Illusion of Time in Information Dynamics\")"
+        ],
+        "collectiveSignificance": "Information is presented as the fundamental substance of reality (I), distinct from human models (Î). The interaction and mismatch between I and Î, particularly concerning resolution (ε) and contrast (κ), are argued to be the source of perceived physical phenomena and mysteries (Quni, 2025, \"Before The Big Bang:...\"; Quni, 2025, \"The Illusion of Time...\"). Information Ontology (IO) is proposed as a framework prioritizing information's ontological primacy (Quni, 2025, \"Beyond the Tyranny of...\")."
+      },
+      {
+        "entity": "Mathematical Formalism",
+        "mentionedInFiles": [
+          "(Quni, 2025, \"Beyond the Tyranny of Mathematical Formalism\")",
+          "(Quni, 2025, \"The “Mathematical Tricks” Postulate\")",
+          "(Quni, 2025, \"Illusion of Randomness\")"
+        ],
+        "collectiveSignificance": "Mathematical formalism is critiqued as being excessively relied upon in modern physics, often leading to 'mathematical tricks' or post-hoc constructs that lack genuine physical grounding (Quni, 2025, \"The “Mathematical Tricks” Postulate\"). The texts argue that mathematics should be subordinate to logic within a fundamental framework like Information Ontology (Quni, 2025, \"Beyond the Tyranny of...\"). Even in mathematics itself, perceived randomness can stem from limitations in algorithmic predictability and representation systems (Quni, 2025, \"Illusion of Randomness\")."
+      },
+      {
+        "entity": "Big Bang",
+        "mentionedInFiles": [
+          "(Quni, 2025, \"Before The Big Bang: What Photons and Black Holes Have in Common\")",
+          "(Quni, 2025, \"The Cosmological Constant Crisis and Its Impact on Modern Science\")",
+          "(Quni, 2025, \"The Illusion of Time in Information Dynamics\")"
+        ],
+        "collectiveSignificance": "The Big Bang is not viewed as an ontological origin but as a 'resolution threshold' or a moment where human models fail (Quni, 2025, \"Before The Big Bang:...\"). Its timeline is described as a perceptual artifact, a sequence imposed by the resolution limits of observation, rather than a fundamental temporal event (Quni, 2025, \"The Illusion of Time...\"). It is also linked to issues within the Lambda CDM model critiqued in the context of the cosmological constant crisis (Quni, 2025, \"The Cosmological Constant Crisis...\")."
+      },
+      {
+        "entity": "Dark Matter/Energy",
+        "mentionedInFiles": [
+          "(Quni, 2025, \"Comparing Fundamental Frameworks\")",
+          "(Quni, 2025, \"The Cosmological Constant Crisis and Its Impact on Modern Science\")",
+          "(Quni, 2025, \"Einstein Was Wrong\")",
+          "(Quni, 2025, \"The “Mathematical Tricks” Postulate\")"
+        ],
+        "collectiveSignificance": "Dark matter and dark energy are presented as prime examples of ad-hoc concepts and potential 'mathematical tricks' used to prop up the Lambda CDM model (Quni, 2025, \"The “Mathematical Tricks” Postulate\"; Quni, 2025, \"Einstein Was Wrong\"). Their existence is questioned due to lack of direct observation, and they are seen as symptomatic of broader issues in cosmology, including the uncritical acceptance of assumptions and the neglect of alternative theories like MOND (Quni, 2025, \"The Cosmological Constant Crisis...\"; Quni, 2025, \"Einstein Was Wrong\")."
+      }
+    ],
+    "potentialGraphEdges": [
+      {
+        "sourceEntity": "Mathematical Formalism",
+        "targetEntity": "Mathematical Tricks Postulate",
+        "relationshipType": "basis for",
+        "evidenceText": "(Quni, 2025, \"The “Mathematical Tricks” Postulate\") The “Mathematical Tricks” Postulate asserts that... much of 20th-century physics embraced post-hoc mathematical constructs as foundational...",
+        "strength": "explicitly stated"
+      },
+      {
+        "sourceEntity": "Resolution Mismatch",
+        "targetEntity": "Perceived Physical Phenomena (Big Bang, Time, Black Holes)",
+        "relationshipType": "causes the perception of",
+        "evidenceText": "(Quni, 2025, \"Before The Big Bang:...\") The Big Bang, photons, and black holes are all manifestations of the same phenomenon: **resolution mismatch**.",
+        "strength": "explicitly stated"
+      },
+      {
+        "sourceEntity": "N=1 Problem",
+        "targetEntity": "Limits of Cosmological Understanding",
+        "relationshipType": "imposes statistical limits on",
+        "evidenceText": "(Quni, 2025, \"N=1 Problem\") Yet, all these outward-looking endeavors slam into a stark, unyielding statistical wall: the N=1 problem.",
+        "strength": "explicitly stated"
+      },
+      {
+        "sourceEntity": "Information Ontology (IO)",
+        "targetEntity": "Logic",
+        "relationshipType": "prioritizes",
+        "evidenceText": "(Quni, 2025, \"Beyond the Tyranny of...\") IO does not reject mathematics, but it subordinates it to a broader logical framework.",
+        "strength": "explicitly stated"
+      }
+    ],
+    "representativeBatchExcerpts": [
+      "(Quni, 2025, \"Before The Big Bang:...\") The Big Bang is not an ontological origin point but a *threshold of human perception*—a moment where our models (Î) fail to resolve the informational contrasts (κ) underlying reality.",
+      "(Quni, 2025, \"Beyond the Tyranny of...\") Conventional physics operates under an unspoken dogma: that the ultimate theory of reality must be expressible as a unified mathematical formalism—preferably a Lagrangian or Hamiltonian so pristine that it fits on a t-shirt.",
+      "(Quni, 2025, \"The “Mathematical Tricks” Postulate\") The “Mathematical Tricks” Postulate asserts that... much of 20th-century physics embraced post-hoc mathematical constructs as foundational, prioritizing the fitting of equations to data and the resolution of theoretical paradoxes over developing theories with genuine explanatory power derived from underlying physical principles.",
+      "(Quni, 2025, \"The Cosmological Constant Crisis...\") However, the adoption of $\\Lambda$CDM cannot be attributed to empirical success or rigorous validation. Instead, it reflects a form of **scientific populism**, where convenience and alignment with preconceived notions outweigh critical scrutiny."
+    ]
+  }
+}

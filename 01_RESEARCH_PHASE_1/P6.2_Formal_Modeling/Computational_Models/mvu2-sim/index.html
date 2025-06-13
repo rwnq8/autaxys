@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autaxys Prime Engine v12.2</title>
+    <style>
+        body, html { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
+        .container { max-width: 1700px; margin: auto; padding: 20px; }
+        h1, h2, h3, h4 { color: #2c3e50; border-bottom: 1px solid #dde1e6; padding-bottom: 8px; margin-top: 1.5em; }
+        h1 { font-size: 2.2em; }
+        .panel { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        
+        .controls-main { display: flex; gap: 10px; margin-bottom: 20px; }
+        .controls-main button.mode-btn { flex-grow: 1; padding: 12px 15px; font-size: 1.05rem; cursor: pointer; border: 1px solid #ced4da; background-color: #e9ecef; border-radius: 5px; transition: background-color 0.2s, border-color 0.2s; }
+        .controls-main button.mode-btn:hover { background-color: #dee2e6; }
+        .controls-main button.mode-btn.active { background-color: #007bff; color: white; border-color: #007bff; font-weight: bold; }
+        
+        .view { display: none; }
+        .view.active { display: block; }
+        
+        .flex-container { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+        .main-view-area { flex: 3; min-width: 600px; }
+        .sidebar-area { flex: 1; min-width: 320px; }
+        
+        canvas { width: 100%; background-color: #08080a; border-radius: 5px; aspect-ratio: 16 / 9; border: 1px solid #ddd; }
+        #divergence-view-container { display: flex; gap: 20px; }
+        #divergence-view-container > div { flex: 1; }
+        #divergence-view-container canvas { aspect-ratio: 1 / 1; }
+
+        #stats-panel dt { font-weight: 600; color: #495057; margin-top: 8px; }
+        #stats-panel dd { font-weight: bold; font-size: 1.1em; color: #0056b3; margin-left: 0; margin-bottom: 10px; padding-left: 15px; border-left: 3px solid #e9ecef; }
+        
+        .config-panel label { display: block; margin-bottom: 10px; font-size: 0.95em; cursor: help; }
+        .config-panel input[type="checkbox"] { margin-right: 8px; vertical-align: middle; }
+        .config-panel .tooltip-text { font-size: 0.8em; color: #6c757d; display: block; margin-left: 22px; }
+
+
+        #rule-weights-ul { list-style-type: none; padding-left: 0; font-size: 0.9em; max-height: 150px; overflow-y: auto;}
+        #rule-weights-ul li { padding: 3px 0; border-bottom: 1px dashed #eee; }
+        #rule-weights-ul li:last-child { border-bottom: none; }
+
+        .control-button { padding: 10px 15px; font-size: 1rem; cursor: pointer; border: 1px solid #007bff; background-color: #007bff; color: white; border-radius: 5px; display: block; width: 100%; margin-bottom:10px; transition: background-color 0.2s; }
+        .control-button:hover { background-color: #0056b3; }
+        .export-button { background-color: #28a745; border-color: #28a745; }
+        .export-button:hover { background-color: #1e7e34; }
+
+        details { margin-bottom:15px; border: 1px solid #eee; border-radius: 4px; padding: 10px; background: #f9f9f9; }
+        summary { font-weight: bold; cursor: pointer; color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Autaxys Prime Engine <small style="font-size:0.5em; color: #6c757d;">v12.2</small></h1>
+        <div class="panel">
+            <details>
+                <summary>About This Research Instrument (v1.9 Framework)</summary>
+                <!-- Assuming D-P6.7-1_Unified_Framework_v1.9.md is in the project root -->
+                <p>This workbench integrates multiple simulation modes to explore the core principles of the Autaxys framework. See <a href="D-P6.7-1_Unified_Framework_v1.9.md" target="_blank">Framework Document D-P6.7-1 v1.9</a> for details.</p>
+            </details>
+        </div>
+
+        <div class="controls-main">
+            <button id="mode-timeline-btn" class="mode-btn active">Single Timeline</button>
+            <button id="mode-multiverse-btn" class="mode-btn">Multiverse Census</button>
+            <button id="mode-divergence-btn" class="mode-btn">Divergence Engine</button>
+        </div>
+
+        <div class="flex-container">
+            <div class="main-view-area">
+                <div id="timeline-view" class="view active panel">
+                    <h2>Mode: Single Universe Timeline Explorer</h2>
+                    <p>Observes a single universe's lifecycle. Aims to find stable states (high S-Level).</p>
+                    <canvas id="timeline-canvas" width="1200" height="675"></canvas>
+                </div>
+
+                <div id="multiverse-view" class="view panel">
+                    <h2>Mode: Multiverse Census</h2>
+                    <p>Continuously runs independent simulations to map possible stable outcomes (C > 1).</p>
+                    <canvas id="multiverse-canvas" width="1200" height="675"></canvas>
+                </div>
+
+                <div id="divergence-view" class="view panel">
+                    <h2>Mode: Divergence Engine</h2>
+                    <p>Runs two simulations with identical initial seeds but different numerical precision to observe divergence.</p>
+                    <div id="divergence-view-container">
+                        <div>
+                            <h4>High Precision (Reproducible)</h4>
+                            <canvas id="divergence-high-canvas"></canvas>
+                        </div>
+                        <div>
+                            <h4>Native Precision (Chaotic)</h4>
+                            <canvas id="divergence-native-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-area">
+                <div class="panel" id="controls-panel">
+                    <h3>Controls</h3>
+                    <button id="pause-button" class="control-button">Start</button>
+                </div>
+                
+                <div class="panel config-panel">
+                    <h3>Simulator Configuration</h3>
+                    <p style="font-size:0.85em; color: #6c757d; margin-top:-5px; margin-bottom:15px;">Hover over labels for tooltips. These settings influence the Cosmic Algorithm rules.</p>
+                    
+                    <label title="Allows Distinctions (nodes) to dynamically change their adaptive 'valence' (number of desired connections) based on their 'stress' levels. Helps them seek better local bonding configurations. (Autaxys 'Adaptation' rule)">
+                        <input type="checkbox" id="cb-enable-adapt-valence"> Enable Valence Adaptation
+                    </label>
+                    <label title="If a Distinction is under very high 'stress', this allows it to flip its 'polarity' (+/-). A more drastic adaptation to find a compatible environment. (Autaxys 'Adaptation' rule)">
+                        <input type="checkbox" id="cb-enable-adapt-polarity"> Enable Polarity Adaptation
+                    </label>
+                    <label title="Under very high and persistent 'stress', Distinctions can change their fundamental 'protoType' (e.g., Standard to Leptonic). Allows exploration of different inherent behavioral characteristics. (Autaxys 'Adaptation' rule)">
+                        <input type="checkbox" id="cb-enable-adapt-prototype"> Enable ProtoType Adaptation
+                    </label>
+                    <label title="A more fundamental rule allowing a Distinction to change its 'protoType' based on broader conditions like persistent low stability (S-Level) or specific stress patterns. (Autaxys 'Transformation' rule)">
+                        <input type="checkbox" id="cb-enable-transform-prototype"> Enable ProtoType Transformation
+                    </label>
+                    <label title="Activates a rule that looks for simple, redundant structures (e.g., a linear chain of three nodes) and simplifies them. Helps reduce unnecessary complexity ('C') and 'Relational Tension'. (Autaxys 'Resolution/Simplification' rule)">
+                        <input type="checkbox" id="cb-enable-collapse"> Enable Collapse Rule
+                    </label>
+                    <label title="Allows the simulation to 'learn' by increasing the preference for rules that have historically led to states with better Ontological Closure (higher S-Level, better robustness, lower complexity/stress). (Rudimentary Autaxys 'algorithmic self-modification')">
+                        <input type="checkbox" id="cb-enable-dynamic-rule-weights"> Enable Dynamic Rule Weighting
+                    </label>
+                    <label title="If enabled, high stress on a node can slightly increase the stress on its immediate neighbors, weighted by the 'flowResistance' of their connecting relations. (Rudimentary Autaxys 'influence propagation')">
+                        <input type="checkbox" id="cb-enable-stress-propagation"> Enable Stress Propagation
+                    </label>
+                </div>
+
+                <div class="panel" id="stats-panel">
+                    <h3>Live Statistics</h3>
+                    <dl>
+                        <dt>Current Mode:</dt><dd id="current-mode-dd">Single Timeline</dd>
+                        <dt>Total Steps (Current Run):</dt><dd id="total-steps-dd">0</dd>
+                        <dt>Complexity (C):</dt><dd id="current-complexity-dd">N/A</dd>
+                        <dt>S-Level:</dt><dd id="current-s-level-dd">N/A</dd>
+                        <dt>Robustness:</dt><dd id="current-robustness-dd">N/A</dd>
+                        <dt>Total Stress:</dt><dd id="current-stress-dd">N/A</dd>
+                        <hr/>
+                        <dt>Total Attempts (Multiverse):</dt><dd id="total-attempts-dd">0</dd>
+                        <dt>Stable Universes Found:</dt><dd id="stable-universes-dd">0</dd>
+                        <dt>Highest S-Level (Multiverse):</dt><dd id="highest-s-level-achieved-dd">S0</dd>
+                        <hr/>
+                        <dt>Divergence Step:</dt><dd id="divergence-step-dd">N/A</dd>
+                    </dl>
+                </div>
+                
+                <div class="panel">
+                    <h3>Dynamic Rule Weights</h3>
+                    <ul id="rule-weights-ul">
+                        <li>N/A (Run simulation)</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Data Export</h3>
+                    <button id="export-data-btn" class="control-button export-button">Export Multiverse Data (.csv)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Correct path from root index.html to main.ts in src/ -->
+    <script type="module" src="./src/main.ts"></script> 
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true, // Important for bundlers like Parcel
+
+    /* Strictness */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Module Resolution Options: */
+    "module": "ESNext",
+    "moduleResolution": "bundler", 
+    // "baseUrl": "./", // Optional: if you want to set a base for non-relative imports
+
+    /* Source Map Options: */
+    "sourceMap": true, // Parcel will also handle source maps
+
+    /* Output Formatting Options: */
+    "noErrorTruncation": true,
+
+    /* Project Structure */
+    "rootDir": "./src", 
+    // "outDir": "./dist", // Parcel manages the output directory
+
+    /* Library options */
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    /* JSX for completeness, Parcel handles it if used */
+    "jsx": "react-jsx" 
+  },
+  "include": [
+    "src/**/*.ts" // Only compile .ts files in the src directory
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests" // Exclude the tests directory from this main compilation
+  ]
+}

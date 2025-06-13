@@ -1,0 +1,24 @@
+{
+  "name": "autaxys-generative-engine",
+  "version": "8.0.0",
+  "description": "The definitive research instrument for the Autaxys framework.",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build"
+  },
+  "author": "Autaxys Research Program",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^4.4.1",
+    "decimal.js": "^10.4.3",
+    "graphology": "^0.25.4",
+    "graphology-shortest-path": "^2.0.1",
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.3.14",
+    "parcel": "^2.11.0",
+    "typescript": "^5.3.3"
+  }
+}

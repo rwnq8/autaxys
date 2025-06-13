@@ -1,175 +1,215 @@
-# organize_project.py
-# A comprehensive script to organize the Autaxys research project directory.
-# This script is idempotent and can be run safely multiple times.
+# ==============================================================================
+#
+#   AUTAXYS PROJECT ORGANIZATION SCRIPT (organize_project.py)
+#   Version: 2.3 (Corrected directory check)
+#   Author: Rowan Brad Quni (with Autologos Assistance)
+#
+# ------------------------------------------------------------------------------
+#
+#   ** PURPOSE **
+#   This script automatically organizes the Autaxys research project directory
+#   into a clean, standardized, and WBS-aligned structure. It is designed to
+#   be idempotent, meaning it can be run safely multiple times without
+#   creating duplicates or causing errors. It will only move files that are
+#   not already in their correct locations.
+#
+# ------------------------------------------------------------------------------
+#
+#   ** HOW TO EXECUTE **
+#
+#   1.  **Navigate to the Project Root:**
+#       Open your terminal or command prompt and change your directory to the
+#       root of the Autaxys project.
+#
+#       cd /path/to/your/projects/AUTX
+#
+#   2.  **Run the Script:**
+#       Execute the script using Python.
+#
+#       python3 organize_project.py
+#
+#   3.  **Review and Commit:**
+#       After the script finishes, review the new, clean directory structure.
+#       Commit the changes to your version control system (e.g., Git).
+#
+# ------------------------------------------------------------------------------
+#
+#   ** USEFUL COMMANDS (for future reference) **
+#
+#   To generate a clean directory tree text file (useful for providing
+#   context or debugging), run the following command from the project root:
+#
+#   **For macOS / Linux:**
+#   tree -a -I ".git|node_modules|__pycache__|_workspace|99_Archive" > autx_directory_tree.txt
+#
+# ==============================================================================
 
 import os
 import shutil
 import re
 
 # --- CONFIGURATION ---
-# Define the root path of the Autaxys project
-ROOT_PATH = 'projects/AUTX'
-PROJECTS_ROOT = os.path.join(ROOT_PATH, '02_Research_Pillars_And_Projects')
+ROOT_PATH = os.path.abspath('.')
+OLD_PROJECTS_ROOT = os.path.join(ROOT_PATH, '02_Research_Pillars_And_Projects')
+NEW_PHASE_1_ROOT = os.path.join(ROOT_PATH, '01_RESEARCH_PHASE_1')
 WORKSPACE_PATH = os.path.join(ROOT_PATH, '_workspace')
 NEW_ARCHIVE_PATH = os.path.join(ROOT_PATH, '99_Archive')
 
+PROJECT_MAP = {
+    "Project_6.1_AFKB_Synthesis": "P6.1_Foundational_Synthesis",
+    "Project_6.2_Formal_Modeling": "P6.2_Formal_Modeling",
+    "P6.5_Methodology_Solidification": "P6.5_Methodology",
+    "Project_6.7_Autaxic_Table_Of_Patterns": "P6.7_Autaxic_Table"
+}
+
 # --- HELPER FUNCTIONS ---
 
-def sanitize_filename(filename):
-    """Cleans up filenames by replacing spaces and standardizing."""
-    name = filename.replace(' ', '_')
-    # Allow alphanumeric, underscore, dash, dot. Remove others.
-    name = re.sub(r'[^\w.\-]', '', name)
-    return name
+def ensure_dir(path):
+    os.makedirs(path, exist_ok=True)
 
-def ensure_dirs(dir_list):
-    """Ensures a list of directories exist, creating them if necessary."""
-    for d in dir_list:
-        os.makedirs(d, exist_ok=True)
-
-def move_file(old_path, new_dir, message_prefix, new_filename=None):
-    """Moves a file to a new directory with a sanitized name and prints a message."""
+def move_item(old_path, new_dir, message_prefix):
     if not os.path.exists(old_path):
         return
-    
-    base_filename = new_filename if new_filename else os.path.basename(old_path)
-    sanitized_name = sanitize_filename(base_filename)
-    new_path = os.path.join(new_dir, sanitized_name)
 
-    # To avoid errors, ensure the destination file doesn't already exist.
-    # This can happen if two files sanitize to the same name.
-    if os.path.exists(new_path):
-        print(f"  [SKIPPED] Destination '{new_path}' already exists.")
+    base_name = os.path.basename(old_path)
+    new_path = os.path.join(new_dir, base_name)
+
+    if os.path.abspath(old_path) == os.path.abspath(new_path):
         return
 
-    print(f"  {message_prefix} Moving '{os.path.basename(old_path)}' to '{new_dir}'")
+    if os.path.exists(new_path):
+        if os.path.isdir(new_path):
+             print(f"  [MERGING] Contents of '{os.path.relpath(old_path, ROOT_PATH)}' into existing '{os.path.relpath(new_path, ROOT_PATH)}'")
+             for item in os.listdir(old_path):
+                 move_item(os.path.join(old_path, item), new_path, message_prefix)
+             try:
+                 if not os.listdir(old_path): os.rmdir(old_path)
+             except OSError: pass
+             return
+        else:
+            print(f"  [SKIPPED] Destination file '{new_path}' already exists. Cannot move '{base_name}'.")
+            return
+
+    print(f"  {message_prefix} Moving '{os.path.relpath(old_path, ROOT_PATH)}' to '{os.path.relpath(new_dir, ROOT_PATH)}'")
     shutil.move(old_path, new_path)
 
-# --- CORE LOGIC FUNCTIONS ---
+# --- CORE LOGIC ---
 
-def organize_project_internals(project_path):
-    """Applies the standard internal structure to a single project folder."""
-    print(f"\n--- Organizing internals of: {os.path.basename(project_path)} ---")
+def create_target_structure():
+    print("--- Creating target directory structure ---")
+    ensure_dir(os.path.join(ROOT_PATH, '00_PROGRAM_MANAGEMENT'))
+    ensure_dir(os.path.join(ROOT_PATH, '00_PROGRAM_MANAGEMENT', '03_Autologos_System'))
+    ensure_dir(os.path.join(ROOT_PATH, '01_FOUNDATIONAL_DOCUMENTS'))
+    ensure_dir(NEW_PHASE_1_ROOT)
     
-    # Define standard subdirectories
-    dirs_to_create = {
-        "deliverables": os.path.join(project_path, 'Deliverables'),
-        "source": os.path.join(project_path, 'Source_Material'),
-        "drafts": os.path.join(project_path, 'Working_Drafts'),
-        "sows": os.path.join(project_path, 'Statements_Of_Work'),
-    }
-    ensure_dirs(dirs_to_create.values())
+    for proj_name in set(PROJECT_MAP.values()):
+        proj_path = os.path.join(NEW_PHASE_1_ROOT, proj_name)
+        ensure_dir(proj_path)
+        ensure_dir(os.path.join(proj_path, 'Deliverables'))
+        ensure_dir(os.path.join(proj_path, 'Source_Material'))
+        ensure_dir(os.path.join(proj_path, 'Working_Drafts'))
+        ensure_dir(os.path.join(proj_path, 'Statements_Of_Work'))
+        ensure_dir(os.path.join(proj_path, 'Computational_Models'))
 
-    files_in_project = [f for f in os.listdir(project_path) if os.path.isfile(os.path.join(project_path, f))]
+    ensure_dir(WORKSPACE_PATH)
+    ensure_dir(NEW_ARCHIVE_PATH)
+    print("✓ Target structure created.")
 
-    for filename in files_in_project:
-        filepath = os.path.join(project_path, filename)
+def organize_files():
+    print("\n--- Organizing all project files ---")
+    all_items = []
+    for dirpath, dirnames, filenames in os.walk(ROOT_PATH, topdown=True):
+        dirnames[:] = [d for d in dirnames if d not in ['_workspace', '99_Archive', '.git', 'node_modules', '__pycache__']]
         
-        # Rule 1: Move SOWs
-        if 'SOW' in filename:
-            move_file(filepath, dirs_to_create["sows"], "[SOW]")
-            continue
-            
-        # Rule 2: Move canonical deliverables (e.g., v1.9, reports, final specs)
-        is_deliverable = 'Report' in filename or 'Results' in filename or 'Spec_V1' in filename or 'v1.9' in filename
-        if 'D-P' in filename or is_deliverable:
-             # Exception: '-review' files are drafts
-            if '-review' in filename:
-                move_file(filepath, dirs_to_create["drafts"], "[DRAFT]")
-            else:
-                move_file(filepath, dirs_to_create["deliverables"], "[DELIVERABLE]")
+        for item in filenames + dirnames:
+            all_items.append(os.path.join(dirpath, item))
+
+    for item_path in all_items:
+        if not os.path.exists(item_path):
             continue
 
-        # Rule 3: Move conceptual/source material
-        if 'Conceptual-AGE-Expansion' in filename or 'CCD-TM' in filename:
-            move_file(filepath, dirs_to_create["source"], "[SOURCE]")
-            continue
-            
-        # Default catch-all for any other files left in the root of the project
-        move_file(filepath, dirs_to_create["source"], "[SOURCE_DEFAULT]")
+        item_name = os.path.basename(item_path)
+        if item_name == 'organize_project.py': continue
 
-    print(f"✓ Finished organizing {os.path.basename(project_path)}")
-
-
-def main():
-    """Main function to orchestrate the entire project reorganization."""
-    if not os.path.isdir(ROOT_PATH):
-        print(f"Error: Root directory '{ROOT_PATH}' not found.")
-        return
-
-    print("--- Starting Autaxys Project Reorganization ---")
-
-    # 1. Create all necessary top-level target directories
-    archive_subdirs = [
-        os.path.join(NEW_ARCHIVE_PATH, 'old_master_plans'),
-        os.path.join(NEW_ARCHIVE_PATH, 'session_logs_and_states'),
-        os.path.join(NEW_ARCHIVE_PATH, 'precursor_frameworks'),
-        os.path.join(NEW_ARCHIVE_PATH, 'old_governance_docs'),
-        os.path.join(NEW_ARCHIVE_PATH, 'unsorted_notes')
-    ]
-    workspace_subdirs = [
-        os.path.join(WORKSPACE_PATH, 'project_working_files')
-    ]
-    ensure_dirs([ROOT_PATH, PROJECTS_ROOT, WORKSPACE_PATH, NEW_ARCHIVE_PATH] + archive_subdirs + workspace_subdirs)
-    print("✓ Ensured all target directories exist.")
-
-    # 2. First Pass: Global cleanup and archival
-    print("\n--- Pass 1: Global Cleanup and Archiving ---")
-    for dirpath, _, filenames in os.walk(ROOT_PATH):
-        # Skip processing the new directories we are moving files into
-        if NEW_ARCHIVE_PATH in dirpath or WORKSPACE_PATH in dirpath:
+        is_workspace_file = ('.json' in item_name or '.js.map' in item_name or 
+                             '.parcel-cache' in item_name or 'dist' in item_name or
+                             'rewind_iter' in item_name or 'product_distillation' in item_name)
+        if is_workspace_file:
+            move_item(item_path, WORKSPACE_PATH, "[WORKSPACE]")
             continue
 
-        for filename in filenames:
-            filepath = os.path.join(dirpath, filename)
-            
-            # Rule: Move all temporary/log/AI-generated files to a workspace subfolder
-            is_temp_file = (filename.endswith('.json') or 'CAT_Export' in filename or 
-                            filename.endswith('.zip') or re.match(r'^\d+_files_combined', filename) or
-                            re.match(r'^_?\d+.*', filename) or 'rewind_iter' in filename)
-            if is_temp_file:
-                move_file(filepath, workspace_subdirs[0], "[WORKSPACE]")
-                continue
+        if 'Master_Plan' in item_name or 'WBS_Autaxys' in item_name:
+            move_item(item_path, os.path.join(ROOT_PATH, '00_PROGRAM_MANAGEMENT'), "[PLAN]")
+            continue
+        
+        if 'Autologos' in item_name or 'AUTX_Autologos' in item_name:
+            move_item(item_path, os.path.join(ROOT_PATH, '00_PROGRAM_MANAGEMENT', '03_Autologos_System'), "[AUTOLOGOS]")
+            continue
 
-            # Rule: Archive old Master Plans
-            if 'Master_Plan' in filename and 'v2.0' not in filename:
-                move_file(filepath, archive_subdirs[0], "[ARCHIVE_PLAN]")
-                continue
+        if 'Comparative_Analysis' in item_name or 'A1_ConceptualPaper' in item_name:
+            move_item(item_path, os.path.join(ROOT_PATH, '01_FOUNDATIONAL_DOCUMENTS'), "[FOUNDATIONAL]")
+            continue
+        
+        target_proj_folder = None
+        for old_name, new_name in PROJECT_MAP.items():
+            if old_name in item_path:
+                target_proj_folder = os.path.join(NEW_PHASE_1_ROOT, new_name)
+                break
+        
+        if not target_proj_folder and "P6.5_Methodology" in item_path:
+            target_proj_folder = os.path.join(NEW_PHASE_1_ROOT, 'P6.5_Methodology')
+
+        if target_proj_folder:
+            if item_name in ['mvu1-sim', 'mvu2-sim']:
+                move_item(item_path, os.path.join(target_proj_folder, 'Computational_Models'), "[CODE]")
+            elif os.path.isfile(item_path):
+                if 'SOW' in item_name:
+                    move_item(item_path, os.path.join(target_proj_folder, 'Statements_Of_Work'), "[SOW]")
+                elif 'D-P' in item_name or 'Report' in item_name or 'Results' in item_name or 'Framework_v' in item_name:
+                    if '-review' in item_name:
+                        move_item(item_path, os.path.join(target_proj_folder, 'Working_Drafts'), "[DRAFT]")
+                    else:
+                        move_item(item_path, os.path.join(target_proj_folder, 'Deliverables'), "[DELIVERABLE]")
+                elif ('Conceptual' in item_name or 'CCD-TM' in item_name or 'product_refinement' in item_name or 
+                      'product_exploratory' in item_name):
+                    move_item(item_path, os.path.join(target_proj_folder, 'Source_Material'), "[SOURCE]")
+                elif item_name.endswith(('.py.md', '.py', '.ts', '.js', '.html')):
+                    move_item(item_path, os.path.join(target_proj_folder, 'Computational_Models'), "[CODE]")
+                elif not item_name.startswith('_'):
+                    move_item(item_path, os.path.join(target_proj_folder, 'Source_Material'), "[SOURCE_DEFAULT]")
+            continue
+
+        if os.path.isfile(item_path) and not (item_name.startswith('_') and item_name.endswith('.md')) and item_name not in ['LICENSE.md', 'README.md', 'Proposed_Directory_Structure.md', 'autx_directory_tree.txt']:
+            move_item(item_path, NEW_ARCHIVE_PATH, "[ARCHIVE_UNSORTED]")
+
+def cleanup_old_structure():
+    """Aggressively removes the old, now-empty directory structure."""
+    print("\n--- Cleaning up old directory structure ---")
     
-    # 3. Second Pass: Internal organization of each project folder
-    print("\n--- Pass 2: Organizing Individual Project Folders ---")
-    project_folders_to_organize = []
-    for dirpath, dirnames, _ in os.walk(PROJECTS_ROOT):
-        for dirname in dirnames:
-            if dirname.startswith('Project_6'):
-                project_folders_to_organize.append(os.path.join(dirpath, dirname))
-
-    for project_path in project_folders_to_organize:
-        organize_project_internals(project_path)
-
-    # 4. Final Cleanup: Handle the old ARCHIVE folder and .gitignore
-    print("\n--- Pass 3: Final Cleanup ---")
-    old_archive_path = os.path.join(ROOT_PATH, 'ARCHIVE')
-    if os.path.exists(old_archive_path):
-        print("Processing old 'ARCHIVE' directory...")
-        # We move its contents to the new archive, then remove it.
-        # This is a fallback in case the first pass missed anything.
-        for item in os.listdir(old_archive_path):
-            item_path = os.path.join(old_archive_path, item)
-            move_file(item_path, os.path.join(NEW_ARCHIVE_PATH, 'unsorted_notes'), "[ARCHIVE_UNSORTED]")
-        
+    if os.path.exists(OLD_PROJECTS_ROOT):
+        print(f"  [CLEANUP] Removing old structure root: '{os.path.relpath(OLD_PROJECTS_ROOT, ROOT_PATH)}'")
         try:
-            if not os.listdir(old_archive_path):
-                os.rmdir(old_archive_path)
-                print("✓ Removed empty old 'ARCHIVE' directory.")
+            shutil.rmtree(OLD_PROJECTS_ROOT)
+            print("  ✓ Successfully removed old project tree.")
         except OSError as e:
-            print(f"Warning: Could not remove old 'ARCHIVE' directory: {e}. It may not be empty. Please review manually.")
+            print(f"  [ERROR] Could not remove '{OLD_PROJECTS_ROOT}': {e}. It might contain files that were not moved. Please review manually.")
 
-    # Create/update .gitignore
-    gitignore_path = os.path.join(os.path.dirname(ROOT_PATH), '.gitignore')
+    old_foundational_path = os.path.join(ROOT_PATH, '01_Foundational_Documents')
+    if os.path.exists(old_foundational_path):
+         try:
+            if not os.listdir(old_foundational_path):
+                os.rmdir(old_foundational_path)
+         except OSError: pass
+
+def generate_gitignore():
+    print("\n--- Generating .gitignore ---")
+    gitignore_path = os.path.join(ROOT_PATH, '.gitignore')
     gitignore_content = """
 # Workspace for temporary files, logs, and AI outputs
 _workspace/
+
+# Archive for old files
+99_Archive/
 
 # Node.js dependencies
 node_modules/
@@ -185,16 +225,38 @@ __pycache__/
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Build artifacts
+dist/
+.parcel-cache/
 """
     with open(gitignore_path, 'w') as f:
         f.write(gitignore_content.strip())
-    print(f"✓ Created/Updated .gitignore at '{gitignore_path}'")
+    print(f"✓ Created/Updated .gitignore at '{os.path.relpath(gitignore_path, ROOT_PATH)}'")
+
+def main():
+    """Main function to orchestrate the entire project reorganization."""
+    # CORRECTED CHECK: Look for a folder that exists BEFORE organization.
+    if not os.path.exists('02_Research_Pillars_And_Projects'):
+        # Also check if the NEW structure already exists, in which case it's already been run.
+        if os.path.exists('01_RESEARCH_PHASE_1'):
+            print("Project appears to be already organized. Exiting.")
+            return
+        print("Error: This script must be run from the 'projects/AUTX' directory (could not find '02_Research_Pillars_And_Projects' folder).")
+        return
+
+    print("="*50)
+    print("  AUTAXYS PROJECT REORGANIZATION SCRIPT v2.3")
+    print("="*50)
+
+    create_target_structure()
+    organize_files()
+    cleanup_old_structure()
+    generate_gitignore()
 
     print("\n--- Reorganization Complete! ---")
-    print("\nNext Steps:")
-    print("1. Review the new directory structure. Check '_workspace' and '99_Archive'.")
-    print("2. Since Zoottelkeeper updates automatically, your Obsidian vault should reflect the changes.")
-    print("3. Commit the changes to your version control system.")
+    print("\nYour project directory is now clean. The old '02_Research_Pillars_And_Projects' folder has been removed.")
+    print("Please review the new structure and commit the changes to your version control system.")
 
 if __name__ == '__main__':
     main()

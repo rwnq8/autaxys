@@ -1,0 +1,208 @@
+.
+├── 00_PROGRAM_MANAGEMENT
+│   ├── 00_Master_Plan
+│   │   ├── _00_Master_Plan.md
+│   │   ├── AUTX_Master_Plan_v2.0_Overview.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_II_Core_Concepts.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_III_Context_URFE.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_IV_Philosophical_Foundations.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_IX_Appendices.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_V_ARM.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_V_Autologos_Protocol.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_VI_Autaxic_Vista.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_VIII_Potential_Applications.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_VII_Strategic_Planning.md
+│   │   ├── AUTX_Master_Plan_v2.0_Part_V_Research_Framework_Intro_Pillars.md
+│   │   └── AUTX_Master_Plan_v2.0_Part_V_Research_Projects.md
+│   ├── 03_Autologos_System
+│   │   └── 03_Autologos_System
+│   │       ├── _03_Autologos_System.md
+│   │       ├── Autologos_App_Specifications.md
+│   │       ├── Autologos_Core_Directives_vX.Y.md
+│   │       ├── Autologos_Protocol_Toolkit_Architecture.md
+│   │       ├── Autologos_Workflow_System_Requirements.md
+│   │       └── AUTX_Autologos_Toolkit_SRD_v1.0.md
+│   └── WBS_Autaxys_R&D_Program_v1.0.md
+├── 01_Foundational_Documents
+│   ├── _01_Foundational_Documents.md
+│   └── Other_Core_Conceptual_Papers
+│       └── _Other_Core_Conceptual_Papers.md
+├── 01_FOUNDATIONAL_DOCUMENTS
+│   ├── A1_ConceptualPaper_RelationalProcessing_IntrinsicCoherence_V20.md
+│   └── Comparative_Analysis_Autaxys_v1.0.md
+├── 01_RESEARCH_PHASE_1
+│   ├── P6.1_Foundational_Synthesis
+│   │   └── Source_Material
+│   │       ├── A0_AFKB_Catalog_AllProcessed_V1.md
+│   │       ├── AFKB_Processed_Artifacts_V1.md
+│   │       ├── AFKB_Structure_And_Management.md
+│   │       └── AUTX_A0_Synth_Formalisms_V1.md
+│   ├── P6.2_Formal_Modeling
+│   │   ├── Computational_Models
+│   │   │   ├── AGE_v0.1_Prototype.py.md
+│   │   │   ├── mvu1-sim
+│   │   │   │   ├── dist
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── mvu1-sim.3464ddca.js
+│   │   │   │   │   ├── mvu1-sim.3464ddca.js.map
+│   │   │   │   │   ├── mvu1-sim.8ed14f75.js
+│   │   │   │   │   └── mvu1-sim.8ed14f75.js.map
+│   │   │   │   ├── index.html
+│   │   │   │   ├── main.ts
+│   │   │   │   ├── _mvu1-sim.md
+│   │   │   │   ├── mvu1.test.ts
+│   │   │   │   ├── mvu1.ts
+│   │   │   │   ├── mvu1.ts.md
+│   │   │   │   ├── package.json
+│   │   │   │   ├── package-lock.json
+│   │   │   │   ├── .parcel-cache
+│   │   │   │   │   ├── data.mdb
+│   │   │   │   │   └── lock.mdb
+│   │   │   │   ├── precision.ts
+│   │   │   │   └── README.md
+│   │   │   ├── mvu2-sim
+│   │   │   │   ├── check_file_lengths.js
+│   │   │   │   ├── dist
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── mvu2-sim.0f289648.js
+│   │   │   │   │   ├── mvu2-sim.0f289648.js.map
+│   │   │   │   │   └── up_
+│   │   │   │   │       └── up_
+│   │   │   │   │           └── up_
+│   │   │   │   │               └── up_
+│   │   │   │   │                   ├── Pillar_5.5_Autaxic_Table_Novel_Predictions
+│   │   │   │   │                   │   └── Project_6.7_Autaxic_Table_Of_Patterns
+│   │   │   │   │                   │       ├── Deliverables
+│   │   │   │   │                   │       │   ├── _Deliverables.md
+│   │   │   │   │                   │       │   └── D-P6.7-1_Unified_Framework_v1.9.md
+│   │   │   │   │                   │       └── _Project_6.7_Autaxic_Table_Of_Patterns.md
+│   │   │   │   │                   └── up_
+│   │   │   │   │                       └── Pillar_5.5_Autaxic_Table_Novel_Predictions
+│   │   │   │   │                           └── Project_6.7_Autaxic_Table_Of_Patterns
+│   │   │   │   │                               ├── Deliverables
+│   │   │   │   │                               │   ├── _Deliverables.md
+│   │   │   │   │                               │   └── D-P6.7-1_Unified_Framework_v1.9.md
+│   │   │   │   │                               └── _Project_6.7_Autaxic_Table_Of_Patterns.md
+│   │   │   │   ├── D-P6.7-1_Unified_Framework_v1.9.md -> /home/rwnquni/Documents/qnfo.org/projects/AUTX/02_Research_Pillars_And_Projects/Pillar_5.5_Autaxic_Table_Novel_Predictions/Project_6.7_Autaxic_Table_Of_Patterns/Deliverables/D-P6.7-1_Unified_Framework_v1.9.md
+│   │   │   │   ├── file_line_counts.json
+│   │   │   │   ├── index.html
+│   │   │   │   ├── jest.config.js
+│   │   │   │   ├── _mvu2-sim.md
+│   │   │   │   ├── package.json
+│   │   │   │   ├── package-lock.json
+│   │   │   │   ├── .parcel-cache
+│   │   │   │   │   ├── 9337ba985a149048-RequestGraph
+│   │   │   │   │   ├── 99eba1cb063e87ce
+│   │   │   │   │   ├── cedc4fba358723c7-AssetGraph
+│   │   │   │   │   ├── data.mdb
+│   │   │   │   │   ├── lock.mdb
+│   │   │   │   │   └── snapshot-9337ba985a149048.txt
+│   │   │   │   ├── README.md
+│   │   │   │   ├── src
+│   │   │   │   │   ├── graph_utils.ts
+│   │   │   │   │   ├── main.ts
+│   │   │   │   │   ├── precision.ts
+│   │   │   │   │   ├── rule_adaptation.ts
+│   │   │   │   │   ├── rule_annihilation.ts
+│   │   │   │   │   ├── rule_bonding.ts
+│   │   │   │   │   ├── rule_collapse.ts
+│   │   │   │   │   ├── rule_genesis.ts
+│   │   │   │   │   ├── rule_transformation.ts
+│   │   │   │   │   ├── rule_utils.ts
+│   │   │   │   │   ├── shared_types.ts
+│   │   │   │   │   ├── simulation_controller.ts
+│   │   │   │   │   ├── simulator_analysis.ts
+│   │   │   │   │   ├── simulator_core.ts
+│   │   │   │   │   ├── simulator_state.ts
+│   │   │   │   │   ├── simulator_step.ts
+│   │   │   │   │   ├── _src.md
+│   │   │   │   │   ├── ui_elements.ts
+│   │   │   │   │   ├── visualizer_graph.ts
+│   │   │   │   │   └── visualizer_multiverse.ts
+│   │   │   │   ├── tests
+│   │   │   │   │   ├── file_integrity.test.ts
+│   │   │   │   │   └── simulator.test.ts
+│   │   │   │   ├── tsconfig.json
+│   │   │   │   └── update_golden_lengths.js
+│   │   │   └── P6.2_Prototype_Code_V1.0.py.md
+│   │   ├── Deliverables
+│   │   │   ├── D-P1-2.7.3.1_Computational_Prototype_Spec_V1.0.md
+│   │   │   ├── D-P6.2-2_Report_on_Suitable_Formalisms_v1.0.md
+│   │   │   ├── D-P6.2-3_Initial_Formal_Language_v1.0.md
+│   │   │   └── P6.2_ComputationalPrototype_V1.0_Results.md
+│   │   ├── Source_Material
+│   │   │   ├── autologos-iterative-process-engine.zip
+│   │   │   ├── AUTX-A0-CCD-TM-001.md
+│   │   │   └── AUTX-A0-Conceptual-AGE-Expansion-Speculations-V1.md
+│   │   └── Statements_Of_Work
+│   │       ├── AUTX-SOW-P6.2.1-001.md
+│   │       ├── AUTX-SOW-P6.2.2-TM1.md
+│   │       └── AUTX-SOW-P6.2.2-TM2-OC.md
+│   ├── P6.5_Methodology
+│   │   └── Deliverables
+│   │       └── D-P6.5-1_Autaxys_Research_Methodology_v1.0.md
+│   └── P6.7_Autaxic_Table
+│       ├── Deliverables
+│       │   ├── AUTX_Framework_v1.7_Part1_Foundational_Concepts_all_analyses_20250609T06380.md
+│       │   ├── AUTX_Framework_v1.7_Part1_Foundational_Concepts.md
+│       │   ├── AUTX_Framework_v1.7_Part2_Patterns_Table.md
+│       │   ├── AUTX_Framework_v1.7_Part3_Vacuum_Emergence.md
+│       │   ├── AUTX_Framework_v1.7_Part4_Formalism_Quantum_Higher.md
+│       │   ├── AUTX_Framework_v1.7_Part5_Principles_Duality_Cosmic.md
+│       │   ├── AUTX_Framework_v1.7_Part6_Defects_Scale_Predictions.md
+│       │   ├── AUTX_Framework_v1.7_Part7_Challenges_Conclusion.md
+│       │   ├── D-P6.7-1_Unified_Framework_v1.9.md
+│       │   └── D-P6.7-1_Unified_Framework_v1.9.pdf
+│       └── Working_Drafts
+│           └── D-P6.7-1_Unified_Framework_v1.8-review.md
+├── 02_Research_Pillars_And_Projects
+│   ├── _02_Research_Pillars_And_Projects.md
+│   ├── Documentation
+│   │   └── _Documentation.md
+│   ├── P6.5_Methodology_Solidification
+│   │   └── _P6.5_Methodology_Solidification.md
+│   ├── Pillar_5.1_Foundational_Theory_Formalization
+│   │   ├── _Pillar_5.1_Foundational_Theory_Formalization.md
+│   │   ├── Project_6.1_AFKB_Synthesis
+│   │   │   ├── Deliverables
+│   │   │   │   └── _Deliverables.md
+│   │   │   ├── _Project_6.1_AFKB_Synthesis.md
+│   │   │   └── Source_Material
+│   │   │       └── _Project_6.1_AFKB_Synthesis.md
+│   │   └── Project_6.2_Formal_Modeling
+│   │       ├── Code
+│   │       │   └── _Code.md
+│   │       ├── Computational_Models
+│   │       │   └── _Computational_Models.md
+│   │       ├── Deliverables
+│   │       │   └── _Deliverables.md
+│   │       ├── _Project_6.2_Formal_Modeling.md
+│   │       ├── Source_Material
+│   │       │   ├── _Project_6.2_Formal_Modeling.md
+│   │       │   └── _Source_Material.md
+│   │       └── Statements_Of_Work
+│   │           └── _Statements_Of_Work.md
+│   ├── Pillar_5.4_Methodology_Validation_Integration
+│   │   └── _Pillar_5.4_Methodology_Validation_Integration.md
+│   └── Pillar_5.5_Autaxic_Table_Novel_Predictions
+│       ├── _Pillar_5.5_Autaxic_Table_Novel_Predictions.md
+│       └── Project_6.7_Autaxic_Table_Of_Patterns
+│           ├── Deliverables
+│           │   └── _Deliverables.md
+│           ├── _Project_6.7_Autaxic_Table_Of_Patterns.md
+│           ├── Source_Material
+│           │   ├── _Project_6.7_Autaxic_Table_Of_Patterns.md
+│           │   └── _Source_Material.md
+│           └── Working_Drafts
+│               └── _Working_Drafts.md
+├── 06_Governance_And_Admin
+│   └── _06_Governance_And_Admin.md
+├── autx_directory_tree.txt
+├── _AUTX.md
+├── .gitignore
+├── LICENSE.md
+├── organize_project.py
+├── Proposed_Directory_Structure.md
+└── README.md
+
+60 directories, 146 files

@@ -10,8 +10,38 @@ import {
 } from './shared_types';
 import type { MVU_Simulator } from './simulator_state';
 
-// --- Stress Calculation ---
+// --- NEW: Autaxic Lagrangian Calculation ---
+/**
+ * Calculates the Autaxic Lagrangian (L_A) for a given pattern descriptor.
+ * This serves as the "existential fitness" function for a graph state.
+ * Based on AUTX-D2.2, it prioritizes the Stability-to-Complexity ratio (S/C)
+ * and penalizes relational tension (stress).
+ * @param descriptor The PatternDescriptor of the graph state.
+ * @returns A PrecisionNumber representing the L_A score.
+ */
+export function calculateAutaxicLagrangian(descriptor: PatternDescriptor): PrecisionNumber {
+    const { C, S, totalStress } = descriptor;
 
+    // Handle the vacuum state (C=0) to avoid division by zero.
+    // The Lagrangian of the void is axiomatically low or zero.
+    if (C.isZero()) {
+        return PrecisionNumber.from(0, C.mode);
+    }
+
+    // L_A is a function of Stability / Complexity, penalized by Stress.
+    // We can model Stability as a combination of S-Level and robustness.
+    // S_Level is weighted heavily as it represents the mechanism of closure.
+    const stabilityScore = PrecisionNumber.from(S.level * S.level, C.mode).add(S.robustness); // S.level squared to give it more weight
+
+    // The Lagrangian is the stability score per unit of complexity, penalized by stress.
+    // L_A = (S_Score - Stress) / C
+    const lagrangian = stabilityScore.subtract(totalStress).divide(C);
+
+    return lagrangian;
+}
+
+
+// --- Stress Calculation ---
 export function calculateIntrinsicNodeStress(nodeId: string, graph: Graph<DistinctionAttrs, RelationAttrs>, sim: MVU_Simulator): PrecisionNumber {
     const attrs = graph.getNodeAttributes(nodeId) as DistinctionAttrs;
     const degree = graph.degree(nodeId);
@@ -19,8 +49,7 @@ export function calculateIntrinsicNodeStress(nodeId: string, graph: Graph<Distin
 
     if (typeof attrs.valence !== 'number' || isNaN(attrs.valence) || 
         typeof attrs.protoValence !== 'number' || isNaN(attrs.protoValence) ) {
-        console.error(`[calculateIntrinsicNodeStress] Node ${nodeId} has invalid valence/protoValence: V=${attrs.valence}, PV=${attrs.protoValence}. Assigning high stress.`);
-        return new PrecisionNumber(10, sim.config.precision);
+        return new PrecisionNumber(10, sim.config.precision); // High stress for invalid state
     }
 
     const unmetAdaptiveValence = attrs.valence - degree;
@@ -79,7 +108,6 @@ export function updateAllNodeStresses(sim: MVU_Simulator): void {
 }
 
 // --- S-Level Detection ---
-
 function detectS2Recursive(g: Graph<DistinctionAttrs, RelationAttrs>, sim: MVU_Simulator): { isS2: boolean, score: PrecisionNumber } {
     if(g.order<3)return{isS2:false,score:new PrecisionNumber(0,sim.config.precision)};
     let hS2S=new PrecisionNumber(0,sim.config.precision);
@@ -114,7 +142,6 @@ function detectS4Composite(g: Graph<DistinctionAttrs, RelationAttrs>): { isS4: b
 }
 
 // --- Descriptor Calculation ---
-
 export function calculatePatternDescriptor(sim: MVU_Simulator): PatternDescriptor {
     const g = sim.graph;
     const o=g.order;const sz=g.size;const C=new PrecisionNumber(o+sz,sim.config.precision);

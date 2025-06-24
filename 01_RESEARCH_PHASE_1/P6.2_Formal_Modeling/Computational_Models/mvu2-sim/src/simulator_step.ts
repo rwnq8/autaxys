@@ -1,7 +1,6 @@
 // src/simulator_step.ts
 import { PrecisionNumber } from './precision';
 import { 
-    S_Level, 
     PatternDescriptor, 
     DescriptorDelta,
     MoveRecord, 
@@ -11,64 +10,50 @@ import { MVU_Simulator } from './simulator_state';
 import { 
     updateAllNodeStresses, 
     calculatePatternDescriptor,
-    getGraphHash
+    getGraphHash,
+    calculateAutaxicLagrangian // Import the new Lagrangian function
 } from './simulator_analysis';
 
-function compareDescriptors(d1: PatternDescriptor, d2: PatternDescriptor): -1 | 0 | 1 {
-    if(d1.S.level > d2.S.level) return 1;
-    if(d1.S.level < d2.S.level) return -1;
-    
-    if(d1.S.level === S_Level.S2_RecursiveStructure && d1.s2_score && d2.s2_score){
-        const s2Comp = d1.s2_score.compareTo(d2.s2_score);
-        if(s2Comp !== 0) return s2Comp;
-    }
-    
-    const robComp = d1.S.robustness.compareTo(d2.S.robustness);
-    if(robComp !== 0) return robComp;
-    
-    const cComp = d2.C.compareTo(d1.C);
-    if(cComp !== 0) return cComp;
-    
-    const stressComp = d2.totalStress.compareTo(d1.totalStress);
-    if(stressComp !== 0) return stressComp;
-    
-    const flowComp = d2.totalRelationFlowResistance.compareTo(d1.totalRelationFlowResistance);
-    if(flowComp !== 0) return flowComp;
-    
-    return 0;
-}
+// The old compareDescriptors function is REMOVED.
 
-export function selectBestFuture(sim: MVU_Simulator, futures: PotentialFuture[], currentDescriptor: PatternDescriptor): PotentialFuture | null {
-    if(futures.length===0)return null;
-    futures.sort((a,b)=>{
-        const descComp = compareDescriptors(a.descriptor, b.descriptor);
-        if (descComp !== 0) return -descComp;
+/**
+ * Selects the best future state based on the Greedy Local Optimization principle.
+ * It finds the future(s) with the maximum Autaxic Lagrangian (L_A) score and
+ * performs stochastic tie-breaking if necessary.
+ * @param sim The simulator instance.
+ * @param futures An array of possible next states.
+ * @returns The single chosen PotentialFuture.
+ */
+function selectBestFuture(sim: MVU_Simulator, futures: PotentialFuture[]): PotentialFuture | null {
+    if (futures.length === 0) return null;
 
-        if (a.move_name === 'bonding' && b.move_name !== 'bonding') return -1;
-        if (b.move_name === 'bonding' && a.move_name !== 'bonding') return 1;
+    // 1. Evaluate: Calculate the L_A score for every potential future.
+    const futuresWithScores = futures.map(future => ({
+        future,
+        score: calculateAutaxicLagrangian(future.descriptor)
+    }));
 
-        if (sim.config.enable_dynamic_rule_weighting && a.origin_rule_weight && b.origin_rule_weight) {
-            const weightComp = a.origin_rule_weight.compareTo(b.origin_rule_weight);
-            if (weightComp !== 0) return -weightComp;
+    // 2. Select: Find the maximum L_A score among all futures.
+    let maxScore = futuresWithScores[0].score;
+    for (let i = 1; i < futuresWithScores.length; i++) {
+        if (futuresWithScores[i].score.isGreaterThan(maxScore)) {
+            maxScore = futuresWithScores[i].score;
         }
-        
-        const costComp = a.cost.compareTo(b.cost);
-        if (costComp !== 0) return costComp;
+    }
 
-        if (a.move_name < b.move_name) return -1; 
-        if (a.move_name > b.move_name) return 1;
+    // 3. Collect all futures that have this maximum score.
+    const bestFutures = futuresWithScores
+        .filter(item => item.score.isEqualTo(maxScore))
+        .map(item => item.future);
 
-        const nodesA = a.nodes_involved.slice().sort().join(',');
-        const nodesB = b.nodes_involved.slice().sort().join(',');
-        if (nodesA < nodesB) return -1; 
-        if (nodesA > nodesB) return 1;
-        
-        return 0;
-    });
-
-    const bestBySort = futures[0];
-    const comparisonToCurrent = compareDescriptors(bestBySort.descriptor,currentDescriptor);
-    if(comparisonToCurrent > 0){return bestBySort;}else{if(sim.graph.order < 5 && sim.step_counter < 15){const gF=futures.find(f=>f.move_name==='genesis');if(gF){if(gF.descriptor.S.level>=currentDescriptor.S.level||futures.length===1){if(gF.descriptor.C.compareTo(currentDescriptor.C.add(2))<=0){return gF;}}}}return bestBySort;}
+    // 4. Actualize: If there's only one best future, choose it.
+    // If there are multiple, perform stochastic tie-breaking by picking one randomly.
+    if (bestFutures.length === 1) {
+        return bestFutures[0];
+    } else {
+        const randomIndex = Math.floor(sim.random() * bestFutures.length);
+        return bestFutures[randomIndex];
+    }
 }
 
 function calculateDescriptorDelta(newDesc: PatternDescriptor, oldDesc: PatternDescriptor | null): DescriptorDelta {
@@ -118,7 +103,7 @@ function updateStagnationCounters(sim: MVU_Simulator): void {
     sim.graph.forEachNode((nodeId, attrs) => {
         const lastStress = sim.node_last_stress.get(nodeId);
         const currentStress = attrs.stress;
-        if (lastStress && currentStress.isGreaterThanOrEqualTo(lastStress)) {
+        if (lastStress && currentStress.isGreaterThanOrEqualTo(lastStress) && currentStress.isGreaterThan(0)) { // Only count stagnation if stress > 0
             const currentCount = sim.node_stagnation_counter.get(nodeId) || 0;
             sim.node_stagnation_counter.set(nodeId, currentCount + 1);
         } else {
@@ -131,7 +116,6 @@ function updateStagnationCounters(sim: MVU_Simulator): void {
 export function step(sim: MVU_Simulator): { halt: boolean, reason?: string, descriptor?: PatternDescriptor, move_record?: MoveRecord } {
     if(sim.graph.order > sim['UNBOUNDED_NODE_LIMIT'] || sim.step_counter >= sim['MAX_STEPS_PER_SIM']){
         const r=sim.graph.order > sim['UNBOUNDED_NODE_LIMIT'] ? 'UNBOUNDED_GROWTH' : 'MAX_STEPS_REACHED';
-        updateAllNodeStresses(sim);
         return {halt:true,reason:r,descriptor:calculatePatternDescriptor(sim)};
     }
 

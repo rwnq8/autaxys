@@ -11,77 +11,99 @@ location: ./01_RESEARCH_PHASE_1/P6.2_Formal_Modeling/Deliverables/D-P6.2-4_Autax
 
 ### **1.0 Introduction**
 
-1.1.1 This document establishes the formal mathematical and computational toolkit for the Autaxys framework. It translates the core concepts, previously described in the *Unified Framework* (`D-P6.7-1`), into a rigorous, testable, and computationally grounded structure. This v2.0 formalization serves as the operational blueprint for the Autaxic Generative Engine (AGE) and all subsequent modeling efforts.
+1.1.1 This document establishes the formal mathematical and computational toolkit for the Autaxys framework. It translates the core concepts, previously described in the *Unified Framework* (`D-P6.7-1`), into a rigorous, testable, and computationally grounded structure. This v2.0 formalization serves as the operational blueprint for the Autaxic Generative Engine (AGE) and all subsequent modeling efforts (as detailed in AUTX-M1). It defines the language and structure for specifying an Autaxys Configuration ($\Pi, \mathcal{R}, L_A, G_0$) and for computationally deriving the properties of emergent phenomena (AQNs, $I_R$, emergent spacetime).
 
 ### **2.0 Level 1: The Attributed Relational Graph**
 
-2.1.1 The state of the universe at any discrete step is formally described using **Graph Theory**.
+2.1.1 The state of the universe at any discrete step is formally described using **Graph Theory**, extended to include attributes and multisets.
 
 2.1.2 A universal state is an *attributed relational graph* $G$, defined as a 4-tuple:
 > $$ G = (D, R, f_D, f_R) $$
 
 2.1.3 The components of the tuple are defined as:
-    2.1.3.1 **$D$**: A finite set of vertices, representing the fundamental **Distinctions**. Each $d \in D$ is a unique entity or node.
-    2.1.3.2 **$R$**: A finite set of edges, representing the **Relations** between distinctions.
-    2.1.3.3 **$f_D$**: A function that assigns a set of *proto-properties* to each distinction, $f_D: D \to \mathcal{P}(\Pi_D)$, where $\Pi_D$ is the space of all possible proto-properties for distinctions.
-    2.1.3.4 **$f_R$**: A function that assigns a set of *proto-properties* to each relation, $f_R: R \to \mathcal{P}(\Pi_R)$, where $\Pi_R$ is the space of all possible proto-properties for relations.
+    2.1.3.1 **$D$**: A finite set of vertices, representing the fundamental **Distinctions**. Each $d \in D$ is a unique identifier for a primitive entity or node in the relational network.
+    2.1.3.2 **$R$**: A finite multiset of directed edges, representing the **Relations** between distinctions. An element of $R$ is a tuple $(u, v, k)$, where $u, v \in D$ and $k$ is a non-negative integer instance identifier for a relation from $u$ to $v$. The multiset nature allows multiple distinct relations between the same pair of distinctions.
+    2.1.3.3 **$f_D$**: An attribute function that assigns a set of intrinsic **Proto-properties** to each distinction, $f_D: D \to \mathcal{P}(\Pi_D)$, where $\Pi_D$ is the universal, finite space of all possible proto-properties for distinctions.
+    2.1.3.4 **$f_R$**: An attribute function that assigns a set of intrinsic **Proto-properties** to each relation, $f_R: R \to \mathcal{P}(\Pi_R)$, where $\Pi_R$ is the universal, finite space of all possible proto-properties for relations.
 
-2.1.4 These *proto-properties* are not passive labels but are active, intrinsic constraints that define the preconditions and postconditions for all interactions within the system.
+2.1.4 These *proto-properties* are not passive labels but are active, intrinsic constraints that define the preconditions and postconditions for all interactions within the system (P1 in Autaxys Formal Hypothesis v2.0). They can carry state, define potential, or belong to specific algebraic structures.
+
+2.1.5 The structure of $\Pi_D$ and $\Pi_R$, including any defined algebraic structures (e.g., group representations, finite fields, non-commutative algebras) or semantic rules for combining/transforming properties, is part of the Autaxys Configuration. For example, proto-properties could be elements of $\mathbb{Z}_n$, and rules might operate on sums of properties modulo $n$. Properties could also be viewed as states in a finite state machine, with rule applications triggering state transitions based on current state and context.
+
+2.1.6 **Alternative Formalisms Considered (briefly noted):** While ARG is the primary choice for v2.0 due to tractability and expressive power for initial generative modeling, the potential suitability of richer formalisms for future versions or specific aspects of the theory was considered (as discussed in D-P6.2-2). These include: Attributed Hypergraphs (for multi-way relations, potentially representing fundamental interactions involving more than two participants), Attributed Simplicial Complexes (for capturing higher-order topological structures beyond pairwise relations, like triangles, tetrahedra, etc., which might be fundamental building blocks of emergent space), Category Theory (could provide a high-level, abstract framework where graphs, patterns, rules, and transformations are objects and morphisms, emphasizing compositionality and structure preservation, potentially useful for theoretical analysis of the framework's structure but less directly amenable to initial large-scale simulation than GRS), Process Calculi (could model distinctions as interacting processes, emphasizing the dynamic, computational nature, relevant for modeling specific interaction types or information flow but perhaps less natural for representing static structural properties of patterns compared to graphs), Formal Languages/Grammars (viewing the GRS as a formal grammar generating the universe's historical trajectory in state space, useful for analyzing generative capacity and complexity), Abstract Algebraic Structures (defining operations and relationships on fundamental properties or rules, e.g., Lie algebras, Clifford algebras, Jordan algebras, quantum algebras, groupoids, which might provide a deeper foundation for emergent symmetries, quantum behavior, or spacetime structure, and can be integrated into proto-property semantics and rule transformations), Geometric Algebra / Clifford Algebra (could provide a powerful framework for representing and manipulating proto-properties and transformations if they have specific geometric or algebraic structure, potentially linking to emergent spacetime and quantum mechanics, e.g., spinors), Quantum Graph Theory / Quantum Computing Formalisms (if the fundamental substrate or specific proto-properties exhibit quantum-like behavior, these might be necessary to represent the state or dynamics, or quantum computing could potentially be used for specific sub-problems like graph isomorphism or sampling complex distributions, representing a significant theoretical and computational extension). ARG provides a good balance for initial modeling efforts, offering sufficient expressive power for patterns, attributes, and relational dynamics while remaining conceptually and computationally accessible for building the first generative simulation engines.
 
 ### **3.0 Level 2: The Autaxic Quantum Numbers (AQNs) as Computable Invariants**
 
-3.1.1 The observable properties of stable, emergent patterns ($P_{ID}$s) are not fundamental but are derived as computable quantities from the structure of their corresponding subgraphs, $G_{P_{ID}}$. These are the **Autaxic Quantum Numbers (AQNs)**.
+3.1.1 The observable properties of stable, emergent patterns ($P_{ID}$s) are not fundamental but are derived as computable quantities from the attributed structure and dynamic behavior of their corresponding subgraphs, $G_{P_{ID}}$, and their interactions. These are the **Autaxic Quantum Numbers (AQNs)** (DC2 in Autaxys Formal Hypothesis v2.0). These are the theoretical predictions that are compared to empirical observables.
 
-3.1.2 **Complexity ($C$):** The AQN corresponding to mass and energy is formalized using concepts from **Algorithmic Information Theory**.
-    3.1.2.1 The complexity of a pattern is its **Kolmogorov Complexity**, approximated as the minimal description length of its attributed subgraph within the system's own descriptive grammar (i.e., its rewrite rules).
-    > $$ C(P_{ID}) \approx K(G_{P_{ID}}) $$
-    3.1.2.2 **Implication:** Mass is a measure of a pattern's irreducible information content.
+3.1.2 **Complexity ($C$):** The AQN corresponding to mass and energy content ($E=mc^2$ analogue). Formalized using **Algorithmic Information Theory (AIT)**.
+    3.1.2.1 The theoretical definition is the Kolmogorov Complexity of the pattern's attributed subgraph structure $G_{P_{ID}}$ and property assignment relative to the Cosmic Algorithm rule set $\mathcal{R}$ as the reference grammar:
+    > $$ C(P_{ID}) \approx K_{\mathcal{R}}(G_{P_{ID}}) $$
+    3.1.2.2 **Computational Approximation:** As exact $K$ is uncomputable, practical modeling uses robust, computable approximations suitable for dynamic attributed graph structures and scalable for ensemble analysis (DC2 in Autaxys Formal Hypothesis v2.0, 3.1.3.1 in AUTX-M1), such as:
+        *   Length of observed derivation paths in simulation.
+        *   Compression algorithms (Lempel-Ziv, Normalized Compression Distance - NCD) applied to standardized, canonical linear encodings of the attributed graph structure and properties. NCD between two patterns can also approximate their 'distance' in complexity space.
+        *   Minimum Description Length (MDL) principle based on encoding the pattern using the rule set $\mathcal{R}$ as the grammar.
+        *   Structural proxies: Simple, easily computable attributed graph metrics that empirically correlate with complexity, such as number of nodes, edges, unique proto-property instances, total count of proto-properties, counts of specific complex motifs, measures of graph "depth" or hierarchical complexity (if the pattern is composite), measures of structural interconnectedness within $G_{P_{ID}}$ (e.g., tree width, cycle counts, minimum bisection width, various connectivity measures, graph diameter), entropy measures on the pattern's local proto-property distribution, metrics derived from spectral graph theory on the pattern subgraph (e.g., sum of eigenvalues of the Laplacian, distribution of eigenvalues, measures related to graph energy), or feature vectors derived from Graph Neural Networks trained to predict complexity. These are often used as initial estimators due to computational efficiency. Relative complexities between patterns are often more meaningful than absolute values.
+    3.1.2.3 **Implication:** Mass is an emergent property related to the irreducible generative complexity or information content of a stable pattern within the system's fundamental grammar. It represents the algorithmic "cost" or resource investment required to create and maintain the pattern via the fundamental rules. This aligns with ideas of mass as bound energy or information content.
 
-3.1.3 **Topology ($T$):** The AQN corresponding to charge, spin, and other quantum numbers is formalized using **Group Theory** and **Graph Invariants**.
-    3.1.3.1 The topology of a pattern is the set of its structural and symmetry properties, including:
-    > $$ T(P_{ID}) = \{ Aut(G_{P_{ID}}), \chi(G_{P_{ID}}), \beta(G_{P_{ID}}), ... \} $$
-    3.1.3.2 **$Aut(G_{P_{ID}})$**: The **automorphism group** of the attributed subgraph, which captures the pattern's symmetries. Its structure and representations are hypothesized to define the pattern's charges and interaction types.
-    3.1.3.3 **Other Invariants**: Other graph invariants, such as the chromatic number ($\chi$) or Betti numbers ($\beta$), describe additional topological properties that may map to quantum numbers like spin or parity.
+3.1.3 **Topology ($T$):** The AQN corresponding to internal quantum numbers (charge, spin, color, etc.) and conserved quantities. Formalized using **Group Theory**, **Attributed Graph Invariants**, and **Proto-property Algebra**.
+    3.1.3.1 $T(P_{ID})$ is a set of descriptors derived from the symmetry properties, structural invariants, and stable proto-property configurations of $G_{P_{ID}}$ (DC2 in Autaxys Formal Hypothesis v2.0, 3.1.3.2 in AUTX-M1):
+    > $$ T(P_{ID}) = \{ Aut(G_{P_{ID}}, f_{P_{ID}}, R_{P_{ID}}^{multiset}), \text{SpectralInvariants}(G_{P_{ID}}), \text{TopologicalInvariants}(G_{P_{ID}}), \text{PropertyAlgebraicInvariants}(G_{P_{ID}}), ... \} $$
+    3.1.3.2 **Attributed Automorphism Group ($Aut(\cdot)$):** The group of graph isomorphisms that preserve structure, attributes, and multiset nature. Captures internal symmetries of the attributed subgraph. Its algebraic structure (e.g., order, subgroups, representations) is hypothesized to define charges and interaction types, linking to emergent gauge symmetries and conservation laws. Specific irreducible representations of these groups can correspond to the transformation properties of particles under emergent forces.
+    3.1.3.3 **Other Attributed Invariants**: Include:
+        *   **Spectral Graph Theory**: Eigenvalue spectra of attributed matrices (e.g., weighted Laplacian, adjacency matrices). Relates to connectivity, cycles, diffusion, energy levels, vibration modes, and can map to energy levels, oscillation modes, or quantum numbers like spin. Eigenvalue degeneracy relates to symmetry.
+        *   **Topological Data Analysis (TDA)**: Persistent homology on metric spaces derived from attributed graphs. Identifies persistent topological features (connected components, cycles, voids - Betti numbers) across scales, potentially relating to topological charge, linking numbers, or emergent internal dimensions.
+        *   **Proto-property Sums/Configurations**: Specific counts, sums (if properties have algebraic structure), or invariant relative arrangements of properties within the pattern. If rules conserve these quantities, they map to emergent conserved numbers (charge, baryon/lepton number). Directly links fundamental properties and their algebra to emergent conservation laws.
+        *   **Knot Theory Analogs**: For patterns with complex cyclic structures, invariants from knot theory.
+        *   **Algebraic Invariants:** Invariants derived from the algebraic structure of proto-properties or the transformation rules (e.g., invariants of representations of abstract algebras, traces, determinants).
+    3.1.3.4 **Implication:** Quantum numbers are emergent properties reflecting the intrinsic symmetries, stable qualitative configurations, and algebraic structure of patterns, derived from the fundamental proto-properties and relational structure. They define the intrinsic identity of the emergent entities.
 
-3.1.4 **Stability ($S$):** The AQN corresponding to lifetime is formalized using concepts from **Dynamical Systems**.
-    3.1.4.1 A stable pattern represents an **attractor basin** in the state space of all possible graph configurations.
-    3.1.4.2 The stability of a pattern is proportional to the "depth" of this basin, defined as the minimum "escape energy" ($\Delta E_{OC}$) required to break the pattern's *ontological closure*.
-    > $$ S(P_{ID}) \propto -\Delta E_{OC} $$
-    3.1.4.3 **Implication:** A pattern's lifetime is a measure of its resilience to the dynamic transformations defined by the system's rules.
+3.1.4 **Stability ($S$):** The AQN corresponding to lifetime, decay rates, and resilience to disruption. Formalized using concepts from **Dynamical Systems Theory**, **Perturbation Analysis**, and **Statistical Analysis of Ensembles**.
+    3.1.4.1 A stable pattern instance represents a robust attractor basin (fixed point, limit cycle, or complex attractor) in the graph state space under the AGE dynamics.
+    3.1.4.2 The theoretical definition is proportional to the minimum "escape energy" ($\Delta E_{OC}$) required to break the pattern's *Ontological Closure* (DC3) – the minimum cumulative $L_A$ change required by a sequence of rule applications to destabilize the pattern:
+    > $$ S(P_{ID}) \propto \Delta E_{OC}(P_{ID}) = \min_{\text{perturbation seq } \sigma} \left( \sum_{(r_i, \mu) \in \sigma} \Delta L_A(G_{current} \xrightarrow{(r_i, \mu)} G_{next}) \right) $$
+    3.1.4.3 **Computational Approximation:** Practical computation relies on approximations (DC2 in Autaxys Formal Hypothesis v2.0, 3.1.3.3, 4.1.2.2.4 in AUTX-M1):
+        *   Simulating targeted perturbations and measuring cumulative $\Delta L_A$ (e.g., using search algorithms on the local state space).
+        *   Analyzing empirical lifetimes and decay rates from ensemble simulations (MVU-2+). The inverse of the empirical decay rate provides a measure of $S$. Branching ratios for decay modes can be derived from the relative frequency of different destructive rule sequences.
+        *   Identifying minimal destructive rule sequences and their $L_A$ cost/probability.
+    3.1.4.4 **Implication:** Lifetime and interaction resilience are emergent properties reflecting the pattern's dynamic resilience to the system's transformations, its ability to maintain its self-consistent structure against the background dynamics, quantified by the depth of its attractor basin or its empirical persistence.
+
+3.1.5 **Interaction Rules ($I_R$):** Emergent, effective descriptions of how $P_{ID}$ instances transform each other or the graph, analogous to forces and particle interactions. Not fundamental AQNs but derived from pattern behaviors (DC2 in Autaxys Formal Hypothesis v2.0, 4.3 in AUTX-M1).
+    3.1.5.1 Derived computationally by observing and statistically characterizing sequences of rule applications involving patterns in relational proximity, leading to pattern transformations (decay, fusion, scattering, state change).
+    3.1.5.2 Involves coarse-graining fine-grained GRS dynamics into effective potentials, cross-sections, reaction probabilities, and conservation laws between patterns, potentially mediated by other patterns (force carriers). Techniques from complex systems, statistical physics coarse-graining, process mining, and machine learning are used.
+    3.1.5.3 **Implication:** Forces and particle interactions are emergent statistical regularities arising from the fundamental dynamics of the relational substrate acting on stable pattern configurations, not fundamental interactions imposed externally. Emergent symmetries in $I_R$ correspond to observed conservation laws.
 
 ### **4.0 Level 3: The Relational Calculus as a Graph Rewriting System**
 
-4.1.1 The dynamics of the universe—the evolution of the graph state $G$—are governed by the **Cosmic Algorithm**. This algorithm is formally modeled as a **Graph Rewriting System**.
+4.1.1 The dynamics of the universe—the evolution of the graph state $G_t \to G_{t+1}$—are governed by the **Cosmic Algorithm**, formally modeled as an **Attributed Graph Rewriting System (GRS)** (P2 in Autaxys Formal Hypothesis v2.0).
 
-4.1.2 The system is defined by a set of production rules, $\{r_i\}$, where each rule is a transformation of the form:
-> $$ r_i : L_i \to R_i $$
-4.1.3 **$L_i$**: The "left-hand side" is an attributed subgraph pattern that must be matched. The match is contingent on both the relational structure and the specific *proto-properties* of the nodes and edges.
-4.1.4 **$R_i$**: The "right-hand side" is the replacement attributed subgraph, defining the resulting structure and *proto-properties* after the rule is applied.
+4.1.2 The system is defined by a finite set of production rules, $\mathcal{R} = \{r_i\}$, where each rule is a transformation of the form:
+> $$ r_i : L_i \Rightarrow R_i $$
+where $L_i$ and $R_i$ are small, connected, attributed relational graphs. Rule application follows algebraic graph rewriting semantics (e.g., Double Pushout - DPO, Single Pushout - SPO) extended for attributes and multisets, defining how the matched subgraph $L_i$ is replaced by $R_i$ while preserving context.
+
+4.1.3 **Rule Application:** A rule $r_i$ is applicable to $G_t$ if a valid attributed subgraph match $\mu: L_i \to G_t$ exists, satisfying structural, proto-property, and context constraints (local, global, historical, emergent spacetime/quantum conditions, algebraic compatibility) (P2 in Autaxys Formal Hypothesis v2.0). $\mathcal{M}(G_t)$ is the finite set of all valid rule application instances (rule-match pairs) available in $G_t$. Finding $\mathcal{M}(G_t)$ is computationally challenging (related to NP-complete subgraph isomorphism).
+
+4.1.4 **Transformation:** Applying $(r_i, \mu) \in \mathcal{M}(G_t)$ transforms $G_t$ to a potential successor state $G'_{t+1} = \mathcal{A}(G_t, r_i, \mu)$. This transformation modifies graph structure (adding/removing nodes/edges) and attributes according to the rule's mapping and specified attribute transformations (including algebraic operations) (P2 in Autaxys Formal Hypothesis v2.0). Rules can specify probabilistic outcomes for transformations.
+
+4.1.5 $\mathcal{P}(G_t) = \{ \mathcal{A}(G_t, r_i, \mu) \mid (r_i, \mu) \in \mathcal{M}(G_t) \}$ is the finite set of all possible immediate successor states reachable from $G_t$. The size of $\mathcal{P}(G_t)$ can be very large.
 
 ### **5.0 Level 4: The Autaxic Action Principle**
 
-5.1.1 The selection of which rule to apply from the set of all possible transformations is governed by a single, fundamental guiding principle. This is a variational principle analogous to the Principle of Least Action, but one of maximization.
+5.1.1 The selection of which rule application instance from $\mathcal{M}(G_t)$ determines the unique state transition $G_t \to G_{t+1}$ is governed by a variational principle of maximization based on the **Autaxic Lagrangian ($L_A$)** (P3 in Autaxys Formal Hypothesis v2.0). This provides the fundamental selection pressure.
 
-5.1.2 **The Autaxic Lagrangian ($L_A$):**
-    5.1.2.1 We define the **Autaxic Lagrangian**, $L_A(G)$, as a computable function that maps any graph state $G$ to a single scalar value. This value quantifies the state's "existential fitness" or *relational aesthetics*.
-    5.1.2.2 The primary candidate for the Lagrangian is the **Stability-to-Complexity Ratio**, which captures the *economy of existence*:
-    > $$ L_A(G) \propto \frac{S_{total}(G)}{C_{total}(G)} $$
-    where $S_{total}$ and $C_{total}$ are measures of the total stability and complexity of all patterns within the graph state $G$.
+5.1.2 **The Autaxic Lagrangian ($L_A$):** A universal, computable function $L_A: \text{AttributedGraphs} \to \mathbb{R}$ quantifying a state's "existential fitness" or "Relational Aesthetics" (P3 in Autaxys Formal Hypothesis v2.0).
+    5.1.2.1 $L_A(G)$ is a flexible function combining contributions from identified patterns, global graph metrics, exploration incentives, constraints, emergent spacetime properties, quantum properties, algebraic structures, thermodynamic properties, and computational efficiency metrics:
+    > $$ L_A(G) = F \left( \Lambda_{patterns}(G), \Lambda_{global}(G), \Lambda_{exploration}(G), \Lambda_{constraints}(G), \Lambda_{spacetime}(G), \Lambda_{quantum}(G), \Lambda_{algebraic}(G), \Lambda_{thermodynamic}(G), \Lambda_{computational}(G) \right) $$
+    5.1.2.2 The specific functional form $F$, its parameters, and the weighting factors of the $\Lambda$ terms are part of the Autaxys Configuration, refined iteratively to match observed reality (P3 in Autaxys Formal Hypothesis v2.0, 4.1.4.3 in AUTX-M1). $L_A$ calculation requires efficient, potentially incremental or approximate, real-time pattern identification and AQN/metric computation within each potential successor state.
 
-5.1.3 **The Autaxic Action Principle:**
-    5.1.3.1 The evolution of the universe from an initial state $G_0$ to a final state $G_N$ follows a discrete path $(G_0, G_1, ..., G_N)$ that maximizes the total **Autaxic Action**, $A_A$.
-    > $$ \text{Maximize } A_A = \sum_{t=0}^{N} L_A(G_t) $$
+5.1.3 **The Selection Principle:** The transition $G_t \to G_{t+1}$ is selected from $\mathcal{P}(G_t)$. The primary mechanism is maximizing $L_A$, but it incorporates stochasticity for the Exploration Drive (DC4).
+    > $$ G_{t+1} = \underset{G' \in \mathcal{P}(G_t)}{\text{argmax}} (L_A(G')) \quad \text{(Standard Greedy Selection)} $$
+    > $$ P(G_{t+1} = G') = \frac{f(L_A(G'), \text{ExplorationParams}, G_t, \mathcal{R})}{\sum_{G'' \in \mathcal{P}(G_t)} f(L_A(G''), \text{ExplorationParams}, G_t, \mathcal{R})} \quad \text{(Probabilistic Selection with DC4)} $$
+    5.1.3.1 The probabilistic selection function $f$ (e.g., Boltzmann distribution $e^{\beta L_A}$, $\epsilon$-greedy, rank-weighted) implements the Exploration Drive (DC4) and potentially models quantum probability by assigning probabilities to different potential futures (P3 in Autaxys Formal Hypothesis v2.0, 3.1.2.4 in AUTX-M1). Parameters within $f$ (like $\beta$ or $\epsilon$) are part of the configuration.
+    5.1.3.2 Deterministic tie-breaking is needed for reproducible greedy simulations.
 
 ### **6.0 Synthesis: The Computational Loop**
 
-6.1.1 The global Autaxic Action Principle is implemented via a **greedy local optimization mechanism**. This provides a plausible and computable engine for cosmic evolution.
+6.1.1 The AGE operates via an iterative computational loop (P3 in Autaxys Formal Hypothesis v2.2, 2.2 in AUTX-M1): Identify all possible rule matches $\mathcal{M}(G_t)$, generate all potential successor states $\mathcal{P}(G_t)$, evaluate $L_A(G')$ for each $G' \in \mathcal{P}(G_t)$, select $G_{t+1}$ based on the selection principle (maximizing $L_A$ or sampling from $L_A$-dependent distribution over $\mathcal{P}(G_t)$), and repeat.
 
-6.1.2 The process for evolving the state from $G_t$ to $G_{t+1}$ is an iterative computational loop:
-    6.1.2.1 **Identify:** Scan the current graph state $G_t$ to find all possible applications of all rules $\{r_i\}$ based on matching both structure and proto-property constraints.
-    6.1.2.2 **Generate:** For each possible rule application, generate the potential next state $G'_{t+1}$.
-    6.1.2.3 **Evaluate:** For each potential state $G'_{t+1}$, compute its Autaxic Lagrangian score, $L_A(G'_{t+1})$.
-    6.1.2.4 **Select:** Identify the single potential state, $G''_{t+1}$, that yields the maximum $L_A$ score.
-    > $$ G''_{t+1} = \underset{G' \in \{\text{potential futures}\}}{\text{argmax}} (L_A(G')) $$
-    6.1.2.5 **Actualize:** The selected state becomes the new state of the universe: $G_{t+1} = G''_{t+1}$. The loop then repeats.
-
---- END OF FILE ---
+6.1.2 This formal toolkit provides the rigorous basis for computationally implementing the Autaxys Generative Engine, simulating cosmic evolution, identifying and characterizing emergent phenomena (patterns, AQNs, $I_R$, spacetime), and iteratively refining the underlying Autaxys Configuration based on empirical comparison, as detailed in the modeling strategy (AUTX-M1). It defines the language for expressing the fundamental principles and the methods for computationally deriving the emergent properties that constitute observed reality. The computational feasibility of executing this loop efficiently for large graphs and long durations is the primary technical challenge.

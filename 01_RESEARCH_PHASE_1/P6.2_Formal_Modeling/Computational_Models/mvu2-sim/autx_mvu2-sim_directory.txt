@@ -1,0 +1,44 @@
+.
+├── autx_mvu2-sim_directory.txt
+├── check_file_lengths.js
+├── package.json
+├── package-lock.json
+├── .parcel-cache
+│   ├── 2f9a753bb5474adc
+│   ├── 9337ba985a149048-RequestGraph
+│   ├── 99eba1cb063e87ce
+│   ├── cedc4fba358723c7-AssetGraph
+│   ├── data.mdb
+│   ├── lock.mdb
+│   └── snapshot-9337ba985a149048.txt
+├── README.md
+├── src
+│   ├── graph_utils.ts
+│   ├── main.ts
+│   ├── precision.ts
+│   ├── rule_adaptation.ts
+│   ├── rule_annihilation.ts
+│   ├── rule_bonding.ts
+│   ├── rule_collapse.ts
+│   ├── rule_genesis.ts
+│   ├── rules_export.ts
+│   ├── rule_transformation.ts
+│   ├── rule_utils.ts
+│   ├── shared_types.ts
+│   ├── simulation_controller.ts
+│   ├── simulator_analysis.ts
+│   ├── simulator_core.ts
+│   ├── simulator_state.ts
+│   ├── simulator_step.ts
+│   ├── _src.md
+│   ├── ui_elements.ts
+│   ├── visualizer_graph.ts
+│   └── visualizer_multiverse.ts
+├── tests
+│   ├── app_flow.e2e.test.ts
+│   ├── file_integrity.test.ts
+│   └── simulator_logic.test.ts
+├── tsconfig.json
+└── update_golden_lengths.js
+
+2038 directories, 10701 files

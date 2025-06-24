@@ -7647,62 +7647,35 @@ const CollapseRule = {
 // src/simulator_step.ts
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "selectBestFuture", ()=>selectBestFuture);
 parcelHelpers.export(exports, "step", ()=>step);
 var _precision = require("./precision");
-var _sharedTypes = require("./shared_types");
 var _simulatorAnalysis = require("./simulator_analysis");
-function compareDescriptors(d1, d2) {
-    if (d1.S.level > d2.S.level) return 1;
-    if (d1.S.level < d2.S.level) return -1;
-    if (d1.S.level === (0, _sharedTypes.S_Level).S2_RecursiveStructure && d1.s2_score && d2.s2_score) {
-        const s2Comp = d1.s2_score.compareTo(d2.s2_score);
-        if (s2Comp !== 0) return s2Comp;
-    }
-    const robComp = d1.S.robustness.compareTo(d2.S.robustness);
-    if (robComp !== 0) return robComp;
-    const cComp = d2.C.compareTo(d1.C);
-    if (cComp !== 0) return cComp;
-    const stressComp = d2.totalStress.compareTo(d1.totalStress);
-    if (stressComp !== 0) return stressComp;
-    const flowComp = d2.totalRelationFlowResistance.compareTo(d1.totalRelationFlowResistance);
-    if (flowComp !== 0) return flowComp;
-    return 0;
-}
-function selectBestFuture(sim, futures, currentDescriptor) {
+// The old compareDescriptors function is REMOVED.
+/**
+ * Selects the best future state based on the Greedy Local Optimization principle.
+ * It finds the future(s) with the maximum Autaxic Lagrangian (L_A) score and
+ * performs stochastic tie-breaking if necessary.
+ * @param sim The simulator instance.
+ * @param futures An array of possible next states.
+ * @returns The single chosen PotentialFuture.
+ */ function selectBestFuture(sim, futures) {
     if (futures.length === 0) return null;
-    futures.sort((a, b)=>{
-        const descComp = compareDescriptors(a.descriptor, b.descriptor);
-        if (descComp !== 0) return -descComp;
-        if (a.move_name === 'bonding' && b.move_name !== 'bonding') return -1;
-        if (b.move_name === 'bonding' && a.move_name !== 'bonding') return 1;
-        if (sim.config.enable_dynamic_rule_weighting && a.origin_rule_weight && b.origin_rule_weight) {
-            const weightComp = a.origin_rule_weight.compareTo(b.origin_rule_weight);
-            if (weightComp !== 0) return -weightComp;
-        }
-        const costComp = a.cost.compareTo(b.cost);
-        if (costComp !== 0) return costComp;
-        if (a.move_name < b.move_name) return -1;
-        if (a.move_name > b.move_name) return 1;
-        const nodesA = a.nodes_involved.slice().sort().join(',');
-        const nodesB = b.nodes_involved.slice().sort().join(',');
-        if (nodesA < nodesB) return -1;
-        if (nodesA > nodesB) return 1;
-        return 0;
-    });
-    const bestBySort = futures[0];
-    const comparisonToCurrent = compareDescriptors(bestBySort.descriptor, currentDescriptor);
-    if (comparisonToCurrent > 0) return bestBySort;
+    // 1. Evaluate: Calculate the L_A score for every potential future.
+    const futuresWithScores = futures.map((future)=>({
+            future,
+            score: (0, _simulatorAnalysis.calculateAutaxicLagrangian)(future.descriptor)
+        }));
+    // 2. Select: Find the maximum L_A score among all futures.
+    let maxScore = futuresWithScores[0].score;
+    for(let i = 1; i < futuresWithScores.length; i++)if (futuresWithScores[i].score.isGreaterThan(maxScore)) maxScore = futuresWithScores[i].score;
+    // 3. Collect all futures that have this maximum score.
+    const bestFutures = futuresWithScores.filter((item)=>item.score.isEqualTo(maxScore)).map((item)=>item.future);
+    // 4. Actualize: If there's only one best future, choose it.
+    // If there are multiple, perform stochastic tie-breaking by picking one randomly.
+    if (bestFutures.length === 1) return bestFutures[0];
     else {
-        if (sim.graph.order < 5 && sim.step_counter < 15) {
-            const gF = futures.find((f)=>f.move_name === 'genesis');
-            if (gF) {
-                if (gF.descriptor.S.level >= currentDescriptor.S.level || futures.length === 1) {
-                    if (gF.descriptor.C.compareTo(currentDescriptor.C.add(2)) <= 0) return gF;
-                }
-            }
-        }
-        return bestBySort;
+        const randomIndex = Math.floor(sim.random() * bestFutures.length);
+        return bestFutures[randomIndex];
     }
 }
 function calculateDescriptorDelta(newDesc, oldDesc) {
@@ -7761,7 +7734,7 @@ function updateStagnationCounters(sim) {
     sim.graph.forEachNode((nodeId, attrs)=>{
         const lastStress = sim.node_last_stress.get(nodeId);
         const currentStress = attrs.stress;
-        if (lastStress && currentStress.isGreaterThanOrEqualTo(lastStress)) {
+        if (lastStress && currentStress.isGreaterThanOrEqualTo(lastStress) && currentStress.isGreaterThan(0)) {
             const currentCount = sim.node_stagnation_counter.get(nodeId) || 0;
             sim.node_stagnation_counter.set(nodeId, currentCount + 1);
         } else sim.node_stagnation_counter.set(nodeId, 0);
@@ -7771,7 +7744,6 @@ function updateStagnationCounters(sim) {
 function step(sim) {
     if (sim.graph.order > sim['UNBOUNDED_NODE_LIMIT'] || sim.step_counter >= sim['MAX_STEPS_PER_SIM']) {
         const r = sim.graph.order > sim['UNBOUNDED_NODE_LIMIT'] ? 'UNBOUNDED_GROWTH' : 'MAX_STEPS_REACHED';
-        (0, _simulatorAnalysis.updateAllNodeStresses)(sim);
         return {
             halt: true,
             reason: r,
@@ -7873,10 +7845,19 @@ function step(sim) {
     };
 }
 
-},{"./precision":"jjewU","./shared_types":"adq2h","./simulator_analysis":"cDPjC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"cDPjC":[function(require,module,exports,__globalThis) {
+},{"./precision":"jjewU","./simulator_analysis":"cDPjC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"cDPjC":[function(require,module,exports,__globalThis) {
 // src/simulator_analysis.ts
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// --- NEW: Autaxic Lagrangian Calculation ---
+/**
+ * Calculates the Autaxic Lagrangian (L_A) for a given pattern descriptor.
+ * This serves as the "existential fitness" function for a graph state.
+ * Based on AUTX-D2.2, it prioritizes the Stability-to-Complexity ratio (S/C)
+ * and penalizes relational tension (stress).
+ * @param descriptor The PatternDescriptor of the graph state.
+ * @returns A PrecisionNumber representing the L_A score.
+ */ parcelHelpers.export(exports, "calculateAutaxicLagrangian", ()=>calculateAutaxicLagrangian);
 // --- Stress Calculation ---
 parcelHelpers.export(exports, "calculateIntrinsicNodeStress", ()=>calculateIntrinsicNodeStress);
 parcelHelpers.export(exports, "updateAllNodeStresses", ()=>updateAllNodeStresses);
@@ -7885,14 +7866,25 @@ parcelHelpers.export(exports, "calculatePatternDescriptor", ()=>calculatePattern
 parcelHelpers.export(exports, "getGraphHash", ()=>getGraphHash);
 var _precision = require("./precision");
 var _sharedTypes = require("./shared_types");
+function calculateAutaxicLagrangian(descriptor) {
+    const { C, S, totalStress } = descriptor;
+    // Handle the vacuum state (C=0) to avoid division by zero.
+    // The Lagrangian of the void is axiomatically low or zero.
+    if (C.isZero()) return (0, _precision.PrecisionNumber).from(0, C.mode);
+    // L_A is a function of Stability / Complexity, penalized by Stress.
+    // We can model Stability as a combination of S-Level and robustness.
+    // S_Level is weighted heavily as it represents the mechanism of closure.
+    const stabilityScore = (0, _precision.PrecisionNumber).from(S.level * S.level, C.mode).add(S.robustness); // S.level squared to give it more weight
+    // The Lagrangian is the stability score per unit of complexity, penalized by stress.
+    // L_A = (S_Score - Stress) / C
+    const lagrangian = stabilityScore.subtract(totalStress).divide(C);
+    return lagrangian;
+}
 function calculateIntrinsicNodeStress(nodeId, graph, sim) {
     const attrs = graph.getNodeAttributes(nodeId);
     const degree = graph.degree(nodeId);
     let stress = 0;
-    if (typeof attrs.valence !== 'number' || isNaN(attrs.valence) || typeof attrs.protoValence !== 'number' || isNaN(attrs.protoValence)) {
-        console.error(`[calculateIntrinsicNodeStress] Node ${nodeId} has invalid valence/protoValence: V=${attrs.valence}, PV=${attrs.protoValence}. Assigning high stress.`);
-        return new (0, _precision.PrecisionNumber)(10, sim.config.precision);
-    }
+    if (typeof attrs.valence !== 'number' || isNaN(attrs.valence) || typeof attrs.protoValence !== 'number' || isNaN(attrs.protoValence)) return new (0, _precision.PrecisionNumber)(10, sim.config.precision); // High stress for invalid state
     const unmetAdaptiveValence = attrs.valence - degree;
     if (unmetAdaptiveValence > 0) stress += unmetAdaptiveValence;
     if (degree > attrs.valence) stress += (degree - attrs.valence) * 0.5;
